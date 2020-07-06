@@ -1,5 +1,5 @@
 
-<?php require_once "scripts.php"; ?>
+
 
 
 <?php
@@ -25,60 +25,11 @@ if (empty($_POST['name']))
 ?>
 
 
-<html>
 
-<head>
-
-  <title>Ventas</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<style>
-
-    @media (max-width: 600px) {
-      #busc_prov {
-        flex-direction: column;
-      }
-
-      #encavezado {
-        margin-bottom: 20%;
-        display: flex;
-        flex: 1 1 0px;
-      }
-
-      #busca_prov {
-        display: flex;
-        flex: 1 1 0px;
-        margin-bottom: 35%;
-      }
-    }
-
-    @media (max-width: 415px) {
-      #busc_prov {
-        flex-direction: column;
-      }
-
-      #encavezado {
-        margin-bottom: 30%;
-        display: flex;
-        flex: 1 1 0px;
-      }
-
-      #busca_prov {
-        display: flex;
-        flex: 1 1 0px;
-        margin-bottom: 45%;
-      }
-    }
-  </style>
-</head>
-
-<body>
  
 
 
-<?php require_once "menu.php"; ?>
+<?php require_once "cavecera.php"; ?>
   <section class="container">
     <div class="col-md-8 "></div>
     <h1>Ventas</h1>
@@ -172,17 +123,6 @@ if (empty($_POST['name']))
     </div>
     <div class="col-4" style="margin-bottom: 3%;"></div>
 
+    <?php require_once "footer.php"; ?>
 
-
-
-
-  <footer class="footer text-muted bg-light">
-    <div class="container">
-      <span>© 2019 Parque Industrial Queretaro</span>
-      <ul class="list-inline mb-0 float-right">
-      </ul>
-    </div>
-  </footer>
-</body>
-
-</html>
+  
