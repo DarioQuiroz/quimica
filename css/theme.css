@@ -886,7 +886,7 @@ address {
 
 .form-control {
   display: block;
-  width: 80%;
+  width: 100%;
   line-height: 1.5;
   height: 48px;
   font-size: 14px;
