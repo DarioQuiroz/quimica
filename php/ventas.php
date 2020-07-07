@@ -22,7 +22,7 @@ if (empty($_POST['name']))
   $files = search_genricoid($_POST['name1']);
 
 
-
+  require_once "cavecera.php";
 ?>
 
 
@@ -98,7 +98,7 @@ if (empty($_POST['name']))
                 <input type="Text" name="Cantidad" id="Cantidad" value="">
                     <input type="" name="id" id="id" value="<?php echo  openssl_encrypt($f->clave,code,key); ?>">
                     <input type="" name="modelo" id="modelo" value="<?php echo openssl_encrypt( $f->nombre,code,key); ?>">
-                    <input type="" name="precio" id="precio" value="<?php echo openssl_encrypt( $f->in_act,code,key); ?>">
+                    <input type="" name="precio" id="precio" value="<?php echo openssl_encrypt( $f->precio,code,key); ?>">
                     <td>  <button class="add-to-cart" name="btnAccion" value="agregar" type="submit" > <em>Comprar</em></button></td>
                   </form>
                   </td>

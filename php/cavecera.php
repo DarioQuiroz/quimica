@@ -137,10 +137,18 @@
             <a href="carritodecompras.php">
               <i>
                 <span class="material-icons shopping_basket"></span>
-                <span class="count"></span>
+                <span class="count"><?php error_reporting(0);
+                                    echo (empty($_SESSION['carrito'])) ? 0 : count($_SESSION['carrito']);
+                                    ?></span>
               </i>
             </a>
             <!-- Cart Dropdown -->
+            <?php
+            $total = 0;
+            ?>
+            <?php
+            foreach ($_SESSION['carrito'] as $indice => $producto) {
+              ?>
         
               <div class="cart-dropdown">
                 <div class="cart-item">
@@ -148,8 +156,8 @@
                     <img src="img/FOTOS OFFICE CLASS/todas/.png" alt="Item">
                   </a>
                   <div class="item-details">
-                    <h3 class="item-title"><a href="shop-single.html"> </a></h3>
-                    <h4 class="item-price"></h4>
+                    <h3 class="item-title"><a href="shop-single.html"> <?php echo $producto['modelo']; ?></a></h3>
+                    <h4 class="item-price"><?php echo $producto['PRECIO']; ?></h4>
                   </div>
 
 
@@ -161,6 +169,10 @@
 
 
                 </div>
+                <?php
+                $total = $total + ($producto['CANTIDAD'] * $producto['PRECIO']);
+              }
+              ?>
              
               <!-- .cart-item -->
 
