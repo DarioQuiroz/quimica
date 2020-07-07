@@ -5,6 +5,7 @@
 <?php
 include "conexion.php";
 include 'config.php';
+include 'carrito.php';
 if (empty($_POST['name']))
   $files = get_prod();
 
@@ -26,10 +27,7 @@ if (empty($_POST['name']))
 
 
 
- 
-
-
-<?php require_once "cavecera.php"; ?>
+<?php //require_once "cavecera.php"; ?>
 <div class="col-4" style="margin-bottom: 3%;"></div>
   <section class="container">
     <div class="col-4 "></div>
@@ -43,7 +41,10 @@ if (empty($_POST['name']))
     
     
     <div class="col-4" style="margin-bottom: 3%;"></div>
-    <?php if (count($files) > 0) : ?>
+    <?php
+    echo "ello";
+    echo "$mensaje";
+    if (count($files) > 0) : ?>
 
    
       <div class="container">

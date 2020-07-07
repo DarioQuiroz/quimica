@@ -35,8 +35,7 @@ if(isset($_POST['btnAccion'])){
             echo "$precio";
             echo "$id";
             print_r($cantidad);
-            echo "<script>alert('el producto ya existe')</script>";
-
+         
         if(!isset($_SESSION['carrito'])){
             $producto=array(
                 'ID'=>$id,
@@ -70,7 +69,7 @@ $mensaje="";
             $mensaje="Producto agregado al carrito";
         }
         }
-        //$mensaje=print_r($_SESSION,true);
+        $mensaje=print_r($_SESSION,true);
     
 
         break;
