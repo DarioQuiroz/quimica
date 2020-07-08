@@ -81,8 +81,8 @@ if (empty($_POST['name']))
 <?php require_once "cavecera.php"; ?>
 
 <div class="container" style="margin: 15%">
-    <div class="col-md-8 "></div>
-    <h1>Editar provedor</h1>
+    <div class="col-4 "></div>
+    <h1>Editar producto</h1>
 
   </section>
 
@@ -90,15 +90,7 @@ if (empty($_POST['name']))
   <section class="container">
     
     <div class="col-4" style="margin-bottom: 3%;"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-3"></div>
-        <div class="col-3"></div>
-        <div class="col-3"></div>
-        <div class="col-3" style="text-align: right;"> <a href="Classes/generar_archivo.php" class="btn btn-success" > Generar Excel</a>
-        </div>
-      </div>
-    </div>
+ 
     <div class="col-4" style="margin-bottom: 3%;"></div>
     <?php if (count($files) > 0) : ?>
 
@@ -109,36 +101,18 @@ if (empty($_POST['name']))
             <thead>
               <tr>
                 <th scope="col">
-                <form method="post" class="form-signin col-12">
                 <h2>Clave</h2>
-                    <input type="search" name="name1" class="form-control" placeholder="id" required>
-                    <div class="space-10"></div>
-                    <button id="VER_FAC" class="btn btn-sm vervacantes btn-block" style="    margin-top: 5%; background-color: blue; color: white;" type="submit" name="submit" value="Submit Form">Buscar archivos</button>
-                  </form>
+             
                   </th>
                 <th scope="col">
-                  <form method="post" class="form-signin col-12">
-                  <h2>Nombre</h2>
-                    <input type="search" name="name" class="form-control" placeholder="Parte del nombre" required>
-                    <div class="space-10"></div>
-                    <button id="VER_FAC" class="btn btn-sm vervacantes btn-block" style="    margin-top: 5%; background-color: blue; color: white;" type="submit" name="submit" value="Submit Form">Buscar archivos</button>
-                  </form>
+                <h2>Nombre</h2>
+                 
                 </th>
-                <th scope="col" style="display: table-cell; vertical-align: middle;">
-                <form method="post" class="form-signin col-12">
-                <h2>Ingrediente activo</h2>
-                <a href="files_fecha.php" class="btn btn-sm vervacantes btn-block" style="margin-top: 5%; background-color: blue; color: white;"> Ordenar por fecha</a>
-               
-                </form></th>
+                <th scope="col" style="display: table-cell; vertical-align: middle;"><h2>Ingrediente activo</h2>
+                </th>
                 <th scope="col"></th>
                 <th scope="col"></th>
-                <th scope="col" style="display: table-cell; vertical-align: middle;">
-                <form method="post" class="form-signin col-12">
-                
-                <a href="files_estado.php" class="btn btn-sm vervacantes btn-block" style="margin-top: 5%; background-color: blue; color: white;"> Ordenar por estado</a>
-               
-                </form></th>
-
+             
                 </th>
               </tr>
             </thead>
@@ -168,7 +142,6 @@ if (empty($_POST['name']))
         <div class="col-3"></div>
         <div class="col-3"></div>
         <div class="col-3"></div>
-        <div class="col-3" style="text-align: right;"> <a href="Classes/generar_archivo.php" class="btn btn-success" > Pagar</a>
         </div>
       </div>
     </div>

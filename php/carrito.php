@@ -33,10 +33,6 @@ if(isset($_POST['btnAccion'])){
             $cantidad=$_POST['Cantidad'];
        
 
-            echo "LA CANTIDAD ES .$cantidad";
-            echo " EL PRECIO ES.$precio";
-            echo " LA CLAVE ES .$id";
-            print_r($cantidad);
          
         if(!isset($_SESSION['carrito'])){
             $producto=array(
@@ -89,6 +85,16 @@ echo "<script> alert('elemento borrado'); </script>";
         
     }
         break;
+
+
+
+
+
+
+
+
+
+        
     }
 
 

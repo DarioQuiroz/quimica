@@ -62,7 +62,7 @@ die();
   <body>
     
 
-  <?php require_once "menu.php"; ?>
+  <?php require_once "cavecera.php"; ?>
 
     
 

@@ -85,7 +85,7 @@
             <ul class="sub-menu">
 
             <li><a  href="captura_producto.php">Registrar nuevo producto </a></li>
-          <li><a  href="sumar_prod.php">Agregar a producto existetnte</a></li>
+          <li><a  href="edit_prod.php">Agregar a producto existetnte</a></li>
           <li><a  href="edit_prod.php">Editar producto</a></li>
 
             </ul>

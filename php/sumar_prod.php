@@ -38,22 +38,64 @@ die();
 
    ];
   }*/
+
+
+
+
+
+
+
+
+
+$consulta=consultarprod($_GET['id']);
+
+function consultarprod( $no_prod )
+{
+
+  $conn = new mysqli("localhost", "root", "", "pruebas2");
+
+  if (mysqli_connect_errno()) {
+  die("No se puede conectar a la base de datos:" . mysqli_connect_error());
+  }else{
+  
+     
+  }
+
+
+
+ $sentencia="SELECT * FROM productos WHERE clave='".$no_prod."' ";
+ $resultado= $conn->query($sentencia) or die ("Error al consultar producto".mysqli_error($conn)); 
+ $fila=$resultado->fetch_assoc();
+
+ return [
+  $fila['clave'],
+  $fila['nombre'],
+  $fila['in_act'],
+  $fila['presentacion'],
+  $fila['cantidad'],
+  $fila['cantdad_total'],
+  $fila['valor_unitario'],
+  $fila['valor_total'],
+   ];
+}
 ?>
+
     
-    <?php   require_once "cavecera.php";
+    <?php  
+     include "conexion.php";
+      require_once "cavecera.php";
+   
  ?>
  
  <div class="container" style="margin: 15%">
       <h1>Sumar Producto</h1>
 
 
-      <form  action="actualizar_prov.php" accept-charset="UTF-8" method="post">
-<input name="utf8" type="hidden" value="&#x2713;" />
-<input type="hidden" name="authenticity_token" value="wj40OKzZpnUsCBJ/7ILDclQi8Hf+HAp65Qsh3D0G+p5PuiQdKcTLwXYdm1AJmTPfrbwbdu1kCGRFrblg9RImhg==" />
-<input type="hidden" class="form-control" name="no"  value="<?php echo $_GET['no']?>">
+      <form  action="act_prod_sum.php" accept-charset="UTF-8" method="post">
+
   <div class="form-group">
     <label for="provider_name">clave</label>
-    <input class="form-control" type="text" name="nombre" id="provider_name" value="<?php echo $consulta[1] ?>" required/>
+    <input class="form-control" type="text"  id="claves" value="<?php echo $consulta[0] ?>" required/>
   </div>
 
   <div class="form-group">
@@ -70,24 +112,20 @@ die();
 
   <div class="form-group">
     <label for="provider_phone">Cantidad</label>
-    <input class="form-control" type="text" name="telefono" id="provider_phone" value="<?php echo $consulta[5] ?>" required/>
+    <input class="form-control" type="text"  id="canti" value="<?php echo $consulta[4] ?>" required/>
   </div>
 
   <div class="form-group">
     <label for="provider_rfc">Cantidad total</label>
-    <input class="form-control" type="text"  maxlength="12" type="text" onKeyUp="this.value=this.value.toUpperCase();" name="rfc" id="provider_rfc" value="<?php echo $consulta[6] ?>" required/>
+    <input class="form-control" type="text"  maxlength="12" type="text" onKeyUp="this.value=this.value.toUpperCase();"  id="provider_rfc" value="<?php echo $consulta[5] ?>" required/>
   </div>
-
-
-  
-
 
   <div class="form-group">
   <div class="float-right">
-  <?php  echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='eliminar_prov.php?no=". $_GET['no']."''>"?>Borrar Producto</a> </th>
+  <?php  //echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='eliminar_prov.php?no=". $_GET['no']."''>"?>Borrar Producto</a> </th>
         
       </div>
-  <p>    <input type="submit" name="commit" value="Actualizar" class="btn btn-primary" data-disable-with="Actualizar" /></p>
+  <p>    <input type="submit" name="btnAccion" value="Actualizar" class="btn btn-primary" data-disable-with="Actualizar" /></p>
 
       <a class="btn btn-primary" href="registro_provedor.php">Cancelar</a>
   </div>

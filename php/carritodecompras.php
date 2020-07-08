@@ -56,9 +56,9 @@ if(array_key_exists('test',$_POST)){
             <div class="item">
              
               <div class="item-details">
-                <h3 class="item-title"><a href="shop-single.html"> <?php echo $producto['modelo']; ?> </a></h3>
+                <h3 class="item-title"><a href=""> <?php echo $producto['modelo']; ?> </a></h3>
                 <h4 class="item-price">$ <?php echo $producto['PRECIO']; ?></h4>
-                <input class="quantity" type="" id="pres" value="<?php echo $producto['PRECIO']; ?>">
+                <input class="quantity" type="hidden" id="pres" value="<?php echo $producto['PRECIO']; ?>">
                 <div class="count-input">
                   <a class="incr-btn" id='aumentar' onclick="carrito(this)" value="aumentar" data-action="decrease" href="#">–</a>
                   <input class="quantity" type="text" id="act" value="<?php echo $producto['CANTIDAD']; ?>">

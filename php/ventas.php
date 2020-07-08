@@ -97,7 +97,7 @@ if (empty($_POST['name3']))
                
 
                 <td> <form action="" method="POST">
-                <input type="Text" name="Cantidad" id="Cantidad" value="">
+                <input type="Text" name="Cantidad" id="Cantidad" value="" required>
                     <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($f->clave,code,key); ?>">
                     <input type="hidden" name="modelo" id="modelo" value="<?php echo openssl_encrypt( $f->nombre,code,key); ?>">
                     <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt( $f->valor_unitario,code,key); ?>">
