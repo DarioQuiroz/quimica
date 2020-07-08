@@ -79,7 +79,8 @@ if (empty($_POST['name']))
 
 
 <?php require_once "cavecera.php"; ?>
-  <section class="container">
+
+<div class="container" style="margin: 15%">
     <div class="col-md-8 "></div>
     <h1>Editar provedor</h1>
 

@@ -590,3 +590,15 @@ jQuery(document).ready(function($) {
 	}
 
 });/*Document Ready End*/
+
+
+var valor=0;
+function carrito(boton){
+    var contador = document.getElementById("contador").value;
+    if (boton.value=='aumentar') {
+        valor++
+    }else{
+        valor--
+    }
+    document.getElementById("contador").textContent = valor;
+}

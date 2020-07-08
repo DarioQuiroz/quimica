@@ -11,6 +11,10 @@ function insert_img($folder, $image){
 	$con = con();
 	$con->query("insert into image (folder,src,created_at,estado) value (\"$folder\",\"$image\",NOW(),0)");
 }
+
+
+
+
 function get_prod(){
 	$images = array();
 	$con = con();
@@ -21,15 +25,58 @@ function get_prod(){
 	return $images;
 }
 
-function get_img($id){
+
+function get_prod_clave($search){
+	$images = array();
+	$con = con();
+	$query=$con->query('select * from productos where clave like "%'.$search.'%"');
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
+
+
+
+function get_todo($search){
+	$images = array();
+	$con = con();
+	$query=$con->query('SELECT * FROM productos WHERE clave LIKE "%'.$search.'%" OR in_act LIKE "%'.$search.'%" OR nombre LIKE "%'.$search.'%"');
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
+
+function get_prod_nom($search){
 	$image = null;
 	$con = con();
-	$query=$con->query("select * from image where id=$id");
+	$query=$con->query('select * from productos where nombre like "%'.$search.'%"');
 	while($r=$query->fetch_object()){
 		$image = $r;
 	}
 	return $image;
 }
+
+
+
+
+
+
+function get_Ing_act($search){
+	$image = null;
+	$con = con();
+	$query=$con->query('select * from productos where in_act like "%'.$search.'%"');
+	while($r=$query->fetch_object()){
+		$image = $r;
+	}
+	return $image;
+}
+
+
+
 
 function del($id){
 	$con = con();

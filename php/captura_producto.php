@@ -1,7 +1,8 @@
-<?php require_once "menu.php"; ?>
-    <body>
+<?php   require_once "cavecera.php";
+ ?>
+ 
 
-<div class="container">
+ <div class="container" style="margin: 15%">
       <h1>Nuevo producto</h1>
             <form method="post" action="consultas.php" enctype="multipart/form-data">
             <div class="form-group">
@@ -53,15 +54,4 @@
         </div>
 
 
-
-        <footer class="footer text-muted bg-light">
-            <div class="container">
-                <span>© </span>
-                <ul class="list-inline mb-0 float-right">
-                </ul>
-            </div>
-        </footer>
-    </body>
-</html>
-
-
+        <?php require_once "footer.php"; ?>

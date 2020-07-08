@@ -76,14 +76,8 @@
         <ul class="menu">
 
           <li class="menu-item-has-children">
-            <a href="#">SILLAS</a>
-            <ul class="sub-menu">
-              <li><a href="sillasdirectivas.php">Ventas del dia</a></li>
-              <li><a href="sillasejecutivas.php">Resumen de venta</a></li>
-              <li><a href="sillasoperativas.php">omething else here</a></li>
+            <a href="ventas.php">Ventas</a>
             
-
-            </ul>
 
           </li>
           <li class="menu-item-has-children">
@@ -96,17 +90,14 @@
 
             </ul>
           </li>
-          <li><a href="#">MODULARES</a>
-          </li>
-
+         
 
           <li class="menu-item-has-children">
-            <a href="#">MESAS</a>
+            <a href="#">Resumen</a>
             <ul class="sub-menu" id="sub1">
-              <li><a href="bancas.php">MESAS DE CONSEJO</a></li>
-              <li><a href="bancas.php">MESAS DE JUNTAS</a></li>
-              <li><a href="bancas.php">MESAS DE CAPACITACION</a></li>
-              <li><a href="bancas.php">MESAS DE NEGOCIOS</a></li>
+              <li><a href="bancas.php">Resumen de la semana</a></li>
+              <li><a href="bancas.php">Resumen del mes</a></li>
+              <li><a href="bancas.php">Resumen del año</a></li>
             </ul>
           </li>
 
@@ -153,7 +144,7 @@
               <div class="cart-dropdown">
                 <div class="cart-item">
                   <a href="carritodecompras.php" class="item-thumb">
-                    <img src="img/FOTOS OFFICE CLASS/todas/.png" alt="Item">
+                    
                   </a>
                   <div class="item-details">
                     <h3 class="item-title"><a href="shop-single.html"> <?php echo $producto['modelo']; ?></a></h3>
@@ -162,8 +153,7 @@
 
 
                   <form action="" method="post">
-                    <input type="hidden" name="id" id="id" value="<">
-                    <button class="btn btn-danger close-btn material-icons close" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="eliminar" title="Remove">
+                  <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($producto['modelo'], code, key); ?>">                    <button class="btn btn-danger close-btn material-icons close" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="eliminar" title="Remove">
                     </button>
                   </form>
 

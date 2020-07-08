@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+
+         $total = 0;
 $mensaje="";
 if(isset($_POST['btnAccion'])){
 
@@ -31,9 +33,9 @@ if(isset($_POST['btnAccion'])){
             $cantidad=$_POST['Cantidad'];
        
 
-            echo "$cantidad";
-            echo "$precio";
-            echo "$id";
+            echo "LA CANTIDAD ES .$cantidad";
+            echo " EL PRECIO ES.$precio";
+            echo " LA CLAVE ES .$id";
             print_r($cantidad);
          
         if(!isset($_SESSION['carrito'])){
@@ -69,28 +71,28 @@ $mensaje="";
             $mensaje="Producto agregado al carrito";
         }
         }
-        $mensaje=print_r($_SESSION,true);
-    
-
+       
+       // session_destroy();
         break;
+       
         case 'eliminar':
-        if(is_numeric(openssl_decrypt($_POST['id'],code,key))){
+            if(is_string(openssl_decrypt($_POST['id'],code,key)))
+            {
             $id=openssl_decrypt($_POST['id'],code,key);
             
             foreach($_SESSION['carrito'] as $indice=>$producto){
-                if($producto['ID']==$id){
+                if($producto['modelo']==$id){
                     unset($_SESSION['carrito'][$indice]);
 echo "<script> alert('elemento borrado'); </script>";
                 }
             }
-        }
-        else
-        {
-            echo "<script> alert('elemento no borrado'); </script>"; $mensaje.="ups, id error";
-        }
+        
+    }
         break;
     }
 
 
 }
  ?>
+
+
