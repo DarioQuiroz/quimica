@@ -9,9 +9,8 @@ die();
   }*/
 ?><?php require_once "scripts.php"; ?>
 
-
 <?php
-
+include 'carrito.php';
 
   $consulta=consultarprod($_GET['id']);
 
@@ -72,13 +71,12 @@ die();
 
       <form  action="modif_prod.php" accept-charset="UTF-8" method="post">
 <input name="utf8" type="hidden" value="&#x2713;" />
-<input type="hidden" name="authenticity_token" value="wj40OKzZpnUsCBJ/7ILDclQi8Hf+HAp65Qsh3D0G+p5PuiQdKcTLwXYdm1AJmTPfrbwbdu1kCGRFrblg9RImhg==" />
-<input type="hidden" class="form-control" name="no"  value="<?php echo $_GET['no']?>">
+ <!-- 
   <div class="form-group">
-    <label for="provider_name">clave</label>
-    <input class="form-control" type="text" name="clave" id="clave" value="<?php echo $consulta[0] ?>" required/>
+    <label  for="provider_name">clave</label>
+    <input class="form-control" type="hidden" name="clave" id="clave" value="<?php echo $consulta[0] ?>" required/>
   </div>
-
+-->
   <div class="form-group">
     <label for="provider_focus">Nombre comercial</label>
     <input class="form-control" type="text" name="comercial" id="comercial" value="<?php echo $consulta[1] ?>" required/>
@@ -120,7 +118,8 @@ die();
 
   <div class="form-group">
   <div class="float-right">
-  <?php  echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='eliminar_prov.php?no=". $_GET['no']."''>"?>Borrar Proveedor</a> </th>
+  <?php  
+  echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='Eliminar_producto.php?no=". $_GET['id']."''>"?>Borrar Proveedor</a> </th>
         
       </div>
   <p>    <input type="submit" name="commit" value="Actualizar" class="btn btn-primary" data-disable-with="Actualizar" /></p>

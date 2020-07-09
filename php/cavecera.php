@@ -93,7 +93,7 @@
          
 
           <li class="menu-item-has-children">
-            <a href="#">Clientes</a>
+            <a href="#">Ventas</a>
             <ul class="sub-menu" id="sub1">
               <li><a href="bancas.php">Resumen de la semana</a></li>
               <li><a href="bancas.php">Resumen del mes</a></li>
@@ -106,12 +106,11 @@
 
 
           <li class="menu-item-has-children">
-            <a href="blog.html">Diseño</a>
+            <a href="blog.html">clientes</a>
             <ul class="sub-menu" id="sub1">
-            <li><a href="Sillasdedisegno.php">SILLAS DE DISEÑO</a></li>
-              <li><a href="bancosdedisegno.php">BANCOS DE DISEÑO</a></li>
-              <li><a href="Sillasdedisegno.php">SOFAS DE DISEÑO</a></li>
-              <li><a href="Sillasdedisegno.php">MESAS DE DISEÑO</a></li>
+            <li><a href="registro_cliente.php">Registrar clientes</a></li>
+              <li><a href="bancosdedisegno.php">Editar clientes</a></li>
+              <li><a href="Sillasdedisegno.php">Adeudo de clientes</a></li>
              
             </ul>
           </li>

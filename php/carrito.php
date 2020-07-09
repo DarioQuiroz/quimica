@@ -197,6 +197,14 @@ mysqli_close($conn);
             break;
 
 
+            
+
+
+            case 'Eliminar producto':
+                
+              
+                
+                break;
 
 
 

@@ -94,40 +94,32 @@ function consultarprod( $no_prod )
       <form  action="act_prod_sum.php" accept-charset="UTF-8" method="post">
 
   <div class="form-group">
-    <label for="provider_name">clave</label>
-    <input class="form-control" type="text"  id="claves" value="<?php echo $consulta[0] ?>" required/>
+    <h2 for="provider_name">clave</h2>
+    <label for="provider_name"><?php echo $consulta[0] ?></label>
+    <input class="form-control" type="hidden"  id="claves" value="<?php echo $consulta[0] ?>" required/>
   </div>
 
-  <div class="form-group">
-    <label for="provider_address">Presentacion</label>
-    <select name="transporte">
-
-<option>1 litro</option>
-
-<option>5 litros</option>
-
-<option>10 litro</option>
-
-</select> </div>
+ 
 
   <div class="form-group">
-    <label for="provider_phone">Cantidad</label>
-    <input class="form-control" type="text"  id="canti" value="<?php echo $consulta[4] ?>" required/>
+    <h2 for="provider_phone">Cantidad existente</ <h2>
+    <label for="provider_phone"><?php echo $consulta[4] ?></label>
   </div>
 
+ 
   <div class="form-group">
-    <label for="provider_rfc">Cantidad total</label>
-    <input class="form-control" type="text"  maxlength="12" type="text" onKeyUp="this.value=this.value.toUpperCase();"  id="provider_rfc" value="<?php echo $consulta[5] ?>" required/>
+    <label for="provider_rfc">Cantidad a sumar</label>
+    <input class="form-control" type="text"  maxlength="12" type="text" onKeyUp="this.value=this.value.toUpperCase();"  id="cantidad" value="Cantidad a suamar" required/>
   </div>
+
 
   <div class="form-group">
   <div class="float-right">
-  <?php  //echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='eliminar_prov.php?no=". $_GET['no']."''>"?>Borrar Producto</a> </th>
         
       </div>
   <p>    <input type="submit" name="btnAccion" value="Actualizar" class="btn btn-primary" data-disable-with="Actualizar" /></p>
 
-      <a class="btn btn-primary" href="registro_provedor.php">Cancelar</a>
+      <a class="btn btn-primary" href="edit_prod.php">Cancelar</a>
   </div>
 </form>
 
