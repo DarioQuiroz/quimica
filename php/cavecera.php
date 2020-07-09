@@ -93,7 +93,7 @@
          
 
           <li class="menu-item-has-children">
-            <a href="#">Resumen</a>
+            <a href="#">Clientes</a>
             <ul class="sub-menu" id="sub1">
               <li><a href="bancas.php">Resumen de la semana</a></li>
               <li><a href="bancas.php">Resumen del mes</a></li>

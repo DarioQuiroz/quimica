@@ -1,10 +1,12 @@
-<?php   require_once "cavecera.php";
+<?php  
+include 'carrito.php';
+require_once "cavecera.php";
  ?>
  
 
  <div class="container" style="margin: 15%">
       <h1>Nuevo producto</h1>
-            <form method="post" action="consultas.php" enctype="multipart/form-data">
+            <form method="post" action="" enctype="multipart/form-data">
             <div class="form-group">
     <label for="provider_name">clave</label>
     <input class="form-control" type="text" name="nombre" id="nombre" required/>
@@ -47,7 +49,7 @@
   </div>
 
 
-             <input class="btn btn-primary" type="submit" value="Registrar" name="subir">
+             <input class="btn btn-primary" type="submit" name="btnAccion" value="Agregrar">
 <a class="btn btn-primary" href="provedores_public.php">cancelar</a>
             </form>
         </div>
