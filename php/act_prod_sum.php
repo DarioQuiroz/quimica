@@ -1,13 +1,9 @@
 <?php
 	$clave=$_POST['clave'];
 	$Cantidad=$_POST['cantidad'];
-	echo "$clave";
-	echo "$Cantidad";
-		
-SumarProducto($clave, $Cantidad);
-
-        function SumarProducto($clave,$Cantidad)
-	{
+	$actual=$_POST['actual'];
+$real=$Cantidad+$actual;
+	
 		$conn = new mysqli("localhost", "root", "", "pruebas2");
 	  
 		if (mysqli_connect_errno()) {
@@ -17,12 +13,13 @@ SumarProducto($clave, $Cantidad);
 		   
 		}
 		   
-		 $sentencia="UPDATE `productos` SET `cantidad` = '".$Cantidad."' WHERE `productos`.`clave` = '".$clave."' ";
-	  
-	  $sentencia="UPDATE productos SET cantidad='".$Cantidad."'       WHERE clave='".$clave."' ";
+
+		$sentencia="UPDATE `productos` SET `cantidad` = '".$real."' WHERE `productos`.`clave` = '".$clave."' ";
+		$conn->query($sentencia) or die ("Error al actualizar datos".mysqli_error($conn));
+  
 	  $conn->query($sentencia) or die ("Error al actualizar datos".mysqli_error($conn));
 
-			}
+			
 ?>
 
 <script type="text/javascript">

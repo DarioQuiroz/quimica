@@ -89,14 +89,16 @@ function consultarprod( $no_prod )
   <p> Nombre:<label for="provider_name"><?php echo $consulta[1] ?></label></p>
   
   <p>Clave:<label for="provider_name"><?php echo $consulta[0] ?></label></p>
-    
-<input type="text" value="<?php echo $consulta[0] ?>" name="cantidad">
+  <p>Cantidad Actual:<label for="provider_name"><?php echo $consulta[4] ?></label></p>
+  <input type="hidden" value="<?php echo $consulta[4] ?>" name="actual" >
 
-  <p> Cantidad a Sumar <input type="text" name="clave"></p>
+<input type="hidden" value="<?php echo $consulta[0] ?>" name="clave" >
+
+  <p> Cantidad a Sumar <input type="text" name="cantidad" ></p>
 
   <p>
     <input type="submit" value="Enviar">
-    <input type="reset" value="Borrar">
+  
   </p>
 </form>
 
