@@ -85,6 +85,47 @@ function get_Ing_act($search){
 
 
 
+
+
+function get_client(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * FROM clientes order by nombre");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function del($id){
 	$con = con();
 	$con->query("delete from image where id=$id");

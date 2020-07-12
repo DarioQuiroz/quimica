@@ -110,7 +110,8 @@
             <ul class="sub-menu" id="sub1">
             <li><a href="registro_cliente.php">Registrar clientes</a></li>
               <li><a href="bancosdedisegno.php">Editar clientes</a></li>
-              <li><a href="Sillasdedisegno.php">Adeudo de clientes</a></li>
+              <li><a href="clientes.php?precio=">Ver clientes</a></li>
+              <li><a href="clientes.php">Adeudo de clientes</a></li>
              
             </ul>
           </li>

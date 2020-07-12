@@ -160,13 +160,14 @@ $telefono=$_POST['telefono'];
 $rfc =$_POST['rfc'];
 $correo=$_POST['correo'];
 $sitioweb=$_POST['sitioweb'];
+$Linea=$_POST['Linea'];
 
 
 
 
 
-$insertar="INSERT INTO productos ( `clave`, `nombre`, `in_act`, `presentacion`, `cantidad`, `cantdad_total`, `valor_unitario`, `valor_total`)
- VALUES ('$nombre', '$giro', '$contacto', '$direccion', ' $telefono', ' $rfc', '$correo', '$sitioweb')";
+$insertar="INSERT INTO productos ( `clave`, `nombre`, `in_act`, `presentacion`, `cantidad`, `cantdad_total`, `valor_unitario`, `valor_total`, `linea`)
+ VALUES ('$nombre', '$giro', '$contacto', '$direccion', ' $telefono', ' $rfc', '$correo', '$sitioweb', '$Linea')";
 $resultado=mysqli_query($conn, $insertar);
 if(!$resultado)
 {
@@ -199,12 +200,6 @@ mysqli_close($conn);
 
             
 
-
-            case 'Eliminar producto':
-                
-              
-                
-                break;
 
 
 

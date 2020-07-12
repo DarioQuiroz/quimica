@@ -4,7 +4,7 @@ include 'config.php';
 include 'carrito.php';
 include 'cavecera.php' ?>
 <!-- Container -->
-<section class="container padding-top-3x padding-bottom">
+<section id="principal"  class="container padding-top-3x padding-bottom">
 
   <h1 class="space-top-half">Productos por cobrar</h1>
   
@@ -95,7 +95,63 @@ if(array_key_exists('test',$_POST)){
           <p class="text-sm text-gray">* Nota: Esta cantidad no incluye los gastos de envío internacional. Podrás calcular los gastos de envío en la caja.</p>
        
           <a href="#" class="btn btn-default btn-block waves-effect waves-light">Actualización de la compra</a>
-          <a href="checkout.php" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Proceder a Pagar</a>
+        
+
+<div class="contenedor-modal">
+  <button type="button" class="btn btn-primary btn-block waves-effect waves-light space-top-none" data-toggle="modal" data-target="#miModal">Proceder a Pagar</button>
+</div>
+
+<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Forma de pago</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+
+
+
+
+      <div class="contenedor-modal2">
+  <button type="button" class="btn btn-primary btn-block waves-effect waves-light space-top-none" data-toggle="modal" data-target="#miModal2">Venta de credito</button>
+</div>
+
+        <a href="checkout.php" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Pagar de contado</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="miModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Clientes</h4>
+      </div>
+      <div class="modal-body">
+
+        <a href="registro_cliente.php?precio=<?php echo number_format($total, 2) ?>" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Reistrar cliente </a>
+        <a href="clientes.php?precio=<?php echo number_format($total, 2) ?>" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Seleccionar cliente </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+          
         </aside>
       </div><!-- .col-md-3.col-sm-4 -->
     </div><!-- .row -->
@@ -105,9 +161,6 @@ if(array_key_exists('test',$_POST)){
 <?php
 }
 ?>
-
-
-
 
 
 <?php include 'footer.php'; ?>
@@ -120,6 +173,9 @@ if(array_key_exists('test',$_POST)){
 <script src="../js/vendor/velocity.min.js"></script>
 <script src="../js/vendor/waves.min.js"></script>
 <script src="../js/scripts.js"></script>
+
+<script src="../js/validar.js"></script>
+<link rel="stylesheet" href="../css/style.css" />
 
 </body><!-- <body> -->
 

@@ -8,9 +8,10 @@ ModificarProducto(
         $_POST['Cantidad'],
         $_POST['total'],
         $_POST['unitario'],
-        $_POST['valor_total']
+        $_POST['valor_total'],
+        $_POST['Linea']
         );
-        function ModificarProducto($clave, $comercial, $activo, $Presentacion, $Cantidad, $total, $unitario, $valor_total)
+        function ModificarProducto($clave, $comercial, $activo, $Presentacion, $Cantidad, $total, $unitario, $valor_total, $linea)
 	{
 		
                 $conn = new mysqli("localhost", "root", "", "pruebas2");
@@ -28,7 +29,8 @@ ModificarProducto(
          cantidad='".$Cantidad."',
          cantdad_total='".$total."',
          valor_unitario='".$unitario."',
-         valor_total='".$valor_total."'
+         valor_total='".$valor_total."',
+         linea='".$linea."'
          WHERE clave='".$clave."' ";
 	$conn->query($sentencia) or die ("Error al actualizar datos".mysqli_error($conn));
 	}

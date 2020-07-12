@@ -72,6 +72,9 @@ if (empty($_POST['name3']))
                 <th scope="col">
                 <h2>Nombre</h2>
                 </th>
+                <th scope="col">
+                <h2>Precio</h2>
+                </th>
                 <th scope="col" style="display: table-cell; vertical-align: middle;">
                 <h2>Ingrediente activo</h2>
                 </th>
@@ -92,6 +95,7 @@ if (empty($_POST['name3']))
               <tr>
                 <td><?php echo $f->clave; ?></td>
                 <td><?php echo $f->nombre; ?></td>
+                <td><?php echo $f->valor_unitario; ?></td>
                 <td><?php echo $f->in_act; ?></td>
              
                

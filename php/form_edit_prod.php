@@ -71,12 +71,12 @@ include 'carrito.php';
 
       <form  action="modif_prod.php" accept-charset="UTF-8" method="post">
 <input name="utf8" type="hidden" value="&#x2713;" />
- <!-- 
+ 
   <div class="form-group">
     <label  for="provider_name">clave</label>
     <input class="form-control" type="hidden" name="clave" id="clave" value="<?php echo $consulta[0] ?>" required/>
   </div>
--->
+
   <div class="form-group">
     <label for="provider_focus">Nombre comercial</label>
     <input class="form-control" type="text" name="comercial" id="comercial" value="<?php echo $consulta[1] ?>" required/>
@@ -113,13 +113,17 @@ include 'carrito.php';
   </div>
 
 
-  
+  <div class="form-group">
+    <label for="provider_website">Linea</label>
+    <input class="form-control" type="text" name="Linea" id="Linea" value="<?php echo $consulta[8] ?>" required/>
+  </div>
+
 
 
   <div class="form-group">
   <div class="float-right">
   <?php  
-  echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='Eliminar_producto.php?no=". $_GET['id']."''>"?>Borrar Proveedor</a> </th>
+  echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='Eliminar_producto.php?no=". $_GET['id']."''>"?>Borrar Producto</a> </th>
         
       </div>
   <p>    <input type="submit" name="commit" value="Actualizar" class="btn btn-primary" data-disable-with="Actualizar" /></p>

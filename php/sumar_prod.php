@@ -40,17 +40,11 @@ die();
   }*/
 
 
-
-
-
-
-
-
-
 $consulta=consultarprod($_GET['id']);
 
 function consultarprod( $no_prod )
 {
+
 
   $conn = new mysqli("localhost", "root", "", "pruebas2");
 
@@ -60,7 +54,6 @@ function consultarprod( $no_prod )
   
      
   }
-
 
 
  $sentencia="SELECT * FROM productos WHERE clave='".$no_prod."' ";
@@ -82,7 +75,7 @@ function consultarprod( $no_prod )
 
     
     <?php  
-     include "conexion.php";
+     
       require_once "cavecera.php";
    
  ?>
@@ -91,25 +84,56 @@ function consultarprod( $no_prod )
       <h1>Sumar Producto</h1>
 
 
-      <form  action="act_prod_sum.php" accept-charset="UTF-8" method="post">
+
+      <form action="act_prod_sum.php" method="POST">
+  <p> Nombre:<label for="provider_name"><?php echo $consulta[1] ?></label></p>
+  
+  <p>Clave:<label for="provider_name"><?php echo $consulta[0] ?></label></p>
+    
+<input type="text" value="<?php echo $consulta[0] ?>" name="cantidad">
+
+  <p> Cantidad a Sumar <input type="text" name="clave"></p>
+
+  <p>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+  </p>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--
+
+
+      <form  accept-charset="UTF-8" method="post">
 
   <div class="form-group">
     <h2 for="provider_name">clave</h2>
-    <label for="provider_name"><?php echo $consulta[0] ?></label>
-    <input class="form-control" type="hidden"  id="claves" value="<?php echo $consulta[0] ?>" required/>
+    
+    <input class="form-control" type="text"  id="claves" value="" required/>
+
   </div>
 
  
 
   <div class="form-group">
     <h2 for="provider_phone">Cantidad existente</ <h2>
-    <label for="provider_phone"><?php echo $consulta[4] ?></label>
+    <label for="provider_phone"><?php /*echo $consulta[4] ?></label>
   </div>
 
  
   <div class="form-group">
     <label for="provider_rfc">Cantidad a sumar</label>
-    <input class="form-control" type="text"  maxlength="12" type="text" onKeyUp="this.value=this.value.toUpperCase();"  id="cantidad" value="Cantidad a suamar" required/>
+    <input class="form-control" type="text"  maxlength="12" type="text"  id="cantidad" value="" required/>
   </div>
 
 
@@ -117,12 +141,12 @@ function consultarprod( $no_prod )
   <div class="float-right">
         
       </div>
-  <p>    <input type="submit" name="btnAccion" value="Actualizar" class="btn btn-primary" data-disable-with="Actualizar" /></p>
+  <p>    <input type="submit"  value="Actualizar" class="btn btn-primary" data-disable-with="Actualizar" /></p>
 
       <a class="btn btn-primary" href="edit_prod.php">Cancelar</a>
   </div>
 </form>
-
+-->
     </div>
 
-    <?php require_once "footer.php"; ?>
+    <?php */require_once "footer.php"; ?>
