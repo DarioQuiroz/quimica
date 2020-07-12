@@ -75,7 +75,7 @@ if(array_key_exists('test',$_POST)){
              
             </div><!-- .item -->
             <?php
-            $total = $total + ($producto['CANTIDAD'] * $producto['PRECIO']);
+            $total = ($producto['CANTIDAD'] * $producto['PRECIO']);
           }
           ?>
 
