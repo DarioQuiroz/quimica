@@ -34,13 +34,21 @@ if (empty($_POST['name3']))
 
   if (empty($_GET['precio'])) {
     if (count($files) > 0) : ?>
+<div class="col-4" style="margin-bottom: 15%;"></div>
+      <section id="principal"   class="container padding-top-3x padding-bottom">
 
-      <section id="principal"  class="container padding-top-3x padding-bottom">
+      <form method="post" class="form-signin col-12">
+                    <input type="search" name="name3" class="form-control" placeholder="Buscar" required>
+                    <div class="space-10"></div>
+                    <button class="add-to-cart" name="btnAccion" value="todo" type="submit" > <em>Buscar</em></button>
+
+                  </form>
       <div class="row padding-top">
       
       <table class="table">
         <thead>
           <tr>
+          <th scope="col"></th>
             <th scope="col">clave</th>
             <th scope="col">nombre</th>
             <th scope="col">apellido paterno</th>
@@ -53,6 +61,8 @@ if (empty($_POST['name3']))
         <tbody>
         <?php foreach ($files as $f) : ?>
                     <tr>
+                    <td scope="row"><a href="modif_client.php?clave=<?php echo $f->clave; ?>">Modificar</a></td>
+                    
                       <td scope="row"><?php echo $f->clave; ?></td>
                       <td><?php echo $f->nombre; ?></td>
                       <td><?php echo $f->apellido_paterno; ?></td>

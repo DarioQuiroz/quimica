@@ -106,10 +106,10 @@
 
 
           <li class="menu-item-has-children">
-            <a href="blog.html">clientes</a>
+            <a href="">clientes</a>
             <ul class="sub-menu" id="sub1">
             <li><a href="registro_cliente.php">Registrar clientes</a></li>
-              <li><a href="bancosdedisegno.php">Editar clientes</a></li>
+              <li><a href="clientes.php?precio=">Editar clientes</a></li>
               <li><a href="clientes.php?precio=">Ver clientes</a></li>
               <li><a href="clientes.php">Adeudo de clientes</a></li>
              
