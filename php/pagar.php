@@ -11,8 +11,12 @@ include 'carrito.php';
     }
     $clave = $_POST['clave'];
         $nombre = $_POST['nombre'];
-        $total = $_POST['total'];
+       // $total = $_POST['total'];
   
+        foreach ($_SESSION['carrito'] as $indice => $producto) {
+            $total = $total + ($producto['CANTIDAD'] * $producto['PRECIO']);
+          }
+           
 
 echo  $clave ;
 echo $nombre;
@@ -28,3 +32,9 @@ echo $total;
         if (!$resultado) {
             echo("Error description: " . mysqli_error($conn));die;
          }
+    
+         session_start();
+     
+         session_destroy();
+         header("location:ventas.php");
+         ?>

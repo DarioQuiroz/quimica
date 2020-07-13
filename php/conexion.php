@@ -69,6 +69,31 @@ function get_prod_nom($search){
 
 
 
+function get_client_busc($search){
+	$image = null;
+	$con = con();
+	$query=$con->query('SELECT * FROM clientes WHERE clave LIKE "%'.$search.'%" OR nombre LIKE "%'.$search.'%" OR apellido_paterno LIKE "%'.$search.'%"');
+	while($r=$query->fetch_object()){
+		$image = $r;
+	}
+	return $image;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

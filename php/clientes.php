@@ -11,19 +11,7 @@ if (empty($_POST['name3']))
 
  else
  
-  $files = get_todo($_POST['name3']);
-
-  if (empty($_POST['name1']))
-  {
-    
-  }
-  //$files = get_imgs_porid();
-
- else
- 
-  $files = search_genricoid($_POST['name1']);
-
-
+  $files = get_client_busc($_POST['name3']);
 
 
 

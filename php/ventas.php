@@ -75,8 +75,11 @@ if (empty($_POST['name3']))
                 <th scope="col">
                 <h2>Precio</h2>
                 </th>
+                <th scope="col">
+                <h2>existencia</h2>
+                </th>
                 <th scope="col" style="display: table-cell; vertical-align: middle;">
-                <h2>Ingrediente activo</h2>
+                <h2>Ingr. activo</h2>
                 </th>
                 <th scope="col" style="display: table-cell; vertical-align: middle;">
                 <h2>Cantidad</h2>
@@ -95,13 +98,16 @@ if (empty($_POST['name3']))
               <tr>
                 <td><?php echo $f->clave; ?></td>
                 <td><?php echo $f->nombre; ?></td>
+
                 <td><?php echo $f->valor_unitario; ?></td>
+                <td>   <?php echo $f->cantidad; ?></td>
+             
                 <td><?php echo $f->in_act; ?></td>
              
                
 
                 <td> <form action="" method="POST">
-                <input type="Text" name="Cantidad" id="Cantidad" value="" required>
+                <input type="number" name="Cantidad" id="Cantidad" min="1" max="<?php echo $f->cantidad; ?>" value="" required>
                     <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($f->clave,code,key); ?>">
                     <input type="hidden" name="modelo" id="modelo" value="<?php echo openssl_encrypt( $f->nombre,code,key); ?>">
                     <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt( $f->valor_unitario,code,key); ?>">
