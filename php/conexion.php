@@ -82,6 +82,16 @@ function get_client_busc($search){
 
 
 
+function get_venta(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * FROM tblventas order by id");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
 
 
 

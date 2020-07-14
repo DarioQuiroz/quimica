@@ -35,18 +35,6 @@ include 'cavecera.php' ?>
           
         
 
-function testfun()
-{
-  $act=$_POST['act'];
-$pres=$_POST['pres'];
-  $total =($act * $pres);
-   echo "Your test function on button click is working";
-   echo "$total";
-}
-
-if(array_key_exists('test',$_POST)){
-   testfun();
-}
 
 ?>
           <?php
@@ -60,19 +48,21 @@ if(array_key_exists('test',$_POST)){
                 <h4 class="item-price">$ <?php echo $producto['PRECIO']; ?></h4>
                 <input class="quantity" type="hidden" id="pres" value="<?php echo $producto['PRECIO']; ?>">
                 <div class="count-input">
-                  <a class="incr-btn" id='aumentar' onclick="carrito(this)" value="aumentar" data-action="decrease" href="#">–</a>
+                 </div>
+              
+              <form action="" method="post">
+              <a class="incr-btn" id='aumentar' onclick="carrito(this)" value="aumentar" data-action="decrease" href="#">–</a>
                   <input class="quantity" type="text" id="act" value="<?php echo $producto['CANTIDAD']; ?>">
                   <a class="incr-btn" id='disminuir'  onclick="carrito(this)" value="disminuir" data-action="increase" href="#">+</a>
-                </div>
-              </div>
-          
-              <form action="" method="post">
                 <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($producto['modelo'], code, key); ?>">
                 <button class="btn btn-danger" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="eliminar" title="Remove">
                   <i class="material-icons remove_shopping_cart"></i>
                 </button>
+                <input type="submit" name="submit" value="Submit Form"><br>
+
               </form>
-             
+              </div>
+          
             </div><!-- .item -->
             <?php
             $total = ($producto['CANTIDAD'] * $producto['PRECIO']);

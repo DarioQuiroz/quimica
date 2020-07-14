@@ -95,9 +95,9 @@
           <li class="menu-item-has-children">
             <a href="#">Ventas</a>
             <ul class="sub-menu" id="sub1">
-              <li><a href="bancas.php">Resumen de la semana</a></li>
-              <li><a href="bancas.php">Resumen del mes</a></li>
-              <li><a href="bancas.php">Resumen del año</a></li>
+              <li><a href="resumen de ventas.php?fec=1">Resumen de la semana</a></li>
+              <li><a href="resumen de ventas.php?fec=2">Resumen del mes</a></li>
+              <li><a href="resumen de ventas.php?fec=3">Resumen del año</a></li>
             </ul>
           </li>
 
