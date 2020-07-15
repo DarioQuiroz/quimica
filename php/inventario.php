@@ -62,15 +62,19 @@ if (count($files) > 0) :
                 <td><?php echo $f->clave; ?></td>
                 <td><?php echo $f->nombre; ?></td>
 
-                <td><?php echo $f->valor_unitario; ?></td>
+                <td>$ <?php echo $f->valor_unitario; ?></td>
                 <td>   <?php echo $f->cantidad; ?></td>
-                <td><?php echo $f->valor_unitario* $f->cantidad?></td>
-
-                
-              </tr>
-              <?php 
+                <td>$ <?php echo $f->valor_unitario* $f->cantidad?></td>
+                <?php 
             $total=$total+$f->valor_unitario* $f->cantidad;
             endforeach; ?>
+              </tr>
+        <tr><td></td>
+        <td></td>
+        <td></td>
+        <td> <h1>Total=</h1></td>
+        <td> <h1>$ <?php echo $total; ?></h1> </td>
+</tr>
           </table>
           <?php  echo $total;
           ?>

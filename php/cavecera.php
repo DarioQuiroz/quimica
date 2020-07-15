@@ -149,7 +149,7 @@
                     
                   </a>
                   <div class="item-details">
-                    <h3 class="item-title"><a href="shop-single.html"> <?php echo $producto['modelo']; ?></a></h3>
+                    <h3 class="item-title"><a href=""> <?php echo $producto['modelo']; ?></a></h3>
                     <h4 class="item-price"><?php echo $producto['PRECIO']; ?></h4>
                   </div>
 

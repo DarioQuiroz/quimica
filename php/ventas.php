@@ -51,7 +51,7 @@ if (empty($_POST['name3']))
     <div class="col-4" style="margin-bottom: 3%;"></div>
     <?php
   
-    echo "$mensaje";
+  
     if (count($files) > 0) : ?>
    <form method="post" class="form-signin col-12">
                     <input type="search" name="name3" class="form-control" placeholder="Buscar" required>
@@ -99,7 +99,7 @@ if (empty($_POST['name3']))
                 <td><?php echo $f->clave; ?></td>
                 <td><?php echo $f->nombre; ?></td>
 
-                <td><?php echo $f->valor_unitario; ?></td>
+                <td>$ <?php echo $f->valor_unitario; ?></td>
                 <td>   <?php echo $f->cantidad; ?></td>
              
                 <td><?php echo $f->in_act; ?></td>

@@ -94,9 +94,9 @@ if (empty($_POST['name3']))
               <td scope="row"> 
               <form action="pagar.php" method="POST">
              
-             <input type="" value="<?php echo $f->clave; ?>" name="clave" size="40">
-              <input type="" value="<?php echo $f->nombre; ?>" name="nombre" size="40">
-              <input type="" value="<?php echo $_GET['precio'] ?>" name="total" size="40">
+             <input type="hidden" value="<?php echo $f->clave; ?>" name="clave" size="40">
+              <input type="hidden" value="<?php echo $f->nombre; ?>" name="nombre" size="40">
+              <input type="hidden" value="<?php echo $_GET['precio'] ?>" name="total" size="40">
               <input type="submit" value="Seleccionar cliente">
               </form>
               </td>
