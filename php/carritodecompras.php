@@ -51,9 +51,9 @@ include 'cavecera.php' ?>
                  </div>
               
               <form action="" method="post">
-              <a class="incr-btn" id='aumentar' onclick="carrito(this)" value="aumentar" data-action="decrease" href="#">–</a>
-                  <input class="quantity" type="text" id="act" value="<?php echo $producto['CANTIDAD']; ?>">
-                  <a class="incr-btn" id='disminuir'  onclick="carrito(this)" value="disminuir" data-action="increase" href="#">+</a>
+              <a class="incr-btn" id='aumentar'  onclick="carrito(this)" value="aumentar" data-action="decrease" href="#">–</a>
+                  <input class="quantity" onchange="multiplicar();" type="text" id="act" value="<?php echo $producto['CANTIDAD']; ?>">
+                  <a class="incr-btn" id='disminuir' onchange="multiplicar();"  onclick="carrito(this)" value="disminuir" data-action="increase" href="#">+</a>
                 <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($producto['modelo'], code, key); ?>">
                 <button class="btn btn-danger" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="eliminar" title="Remove">
                   <i class="material-icons remove_shopping_cart"></i>
@@ -81,7 +81,7 @@ include 'cavecera.php' ?>
       <div class="col-md-3 col-md-offset-1 col-sm-4 padding-bottom-2x">
         <aside>
           <h3 class="toolbar-title">Subtotal del carrito:</h3>
-          <h4 class="amount">$ <?php echo number_format($total, 2) ?> </h4>
+          <h4 id="totalpay">$ <?php echo number_format($total, 2) ?> </h4>
           <p class="text-sm text-gray">* Nota: Esta cantidad no incluye los gastos de envío internacional. Podrás calcular los gastos de envío en la caja.</p>
        
           <a href="#" class="btn btn-default btn-block waves-effect waves-light">Actualización de la compra</a>
@@ -112,8 +112,7 @@ include 'cavecera.php' ?>
       <div class="contenedor-modal2">
   <button type="button" class="btn btn-primary btn-block waves-effect waves-light space-top-none" data-toggle="modal" data-target="#miModal2">Venta de credito</button>
 </div>
-
-        <a href="checkout.php" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Pagar de contado</a>
+       <a href="checkout.php" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Pagar de contado</a>
 
       </div>
     </div>
@@ -133,7 +132,8 @@ include 'cavecera.php' ?>
       </div>
       <div class="modal-body">
 
-        <a href="registro_cliente.php?precio=<?php echo number_format($total, 2) ?>" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Reistrar cliente </a>
+        <a href='registro_cliente.php?precio=<?php echo '<script>  document.getElementById("totalpay").value;
+   </script>' ?>' class="btn btn-primary btn-block waves-effect waves-light space-top-none">Reistrar cliente </a>
         <a href="clientes.php?precio=<?php echo number_format($total, 2) ?>" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Seleccionar cliente </a>
 
       </div>
@@ -151,6 +151,21 @@ include 'cavecera.php' ?>
 <?php
 }
 ?>
+
+<script>
+
+function multiplicar(){
+
+  m1 = document.getElementById("act").value;
+  m2 = document.getElementById("pres").value;
+  r = m1*m2;
+
+ 
+  
+  document.getElementById("totalpay").innerHTML = r;
+
+
+}   </script>
 
 
 <?php include 'footer.php'; ?>

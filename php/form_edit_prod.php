@@ -41,6 +41,7 @@ include 'carrito.php';
     $fila['cantdad_total'],
     $fila['valor_unitario'],
     $fila['valor_total'],
+    $fila['linea'],
      ];
   }
 ?>

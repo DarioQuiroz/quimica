@@ -67,7 +67,7 @@ if (empty($_POST['name3']))
               <tr>
                 <th scope="col-4">
                 
-                <h2>Clave</h2>
+                <h2>Linea</h2>
                   </th>
                 <th scope="col">
                 <h2>Nombre</h2>
@@ -96,7 +96,7 @@ if (empty($_POST['name3']))
             </thead>
             <?php foreach ($files as $f) : ?>
               <tr>
-                <td><?php echo $f->clave; ?></td>
+                <td><?php echo $f->linea; ?></td>
                 <td><?php echo $f->nombre; ?></td>
 
                 <td>$ <?php echo $f->valor_unitario; ?></td>

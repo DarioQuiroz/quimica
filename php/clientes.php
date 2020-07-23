@@ -49,7 +49,9 @@ if (empty($_POST['name3']))
         <tbody>
         <?php foreach ($files as $f) : ?>
                     <tr>
-                    <td scope="row"><a href="modif_client.php?clave=<?php echo $f->clave; ?>">Modificar</a></td>
+                    <td scope="row">
+                      <a data-toggle="modal" href="modif_client.php?clave=<?php echo $f->clave; ?>">Modificar</a>
+                    </td>
                     
                       <td scope="row"><?php echo $f->clave; ?></td>
                       <td><?php echo $f->nombre; ?></td>
@@ -61,7 +63,7 @@ if (empty($_POST['name3']))
           <?php endforeach; ?>
         </tbody>
       </table>
-      <?php else : ?>
+
           <h4>No se encontraron resultados con esta busquedad</h4>
           <?php endif;
   }
@@ -94,11 +96,18 @@ if (empty($_POST['name3']))
               <td scope="row"> 
               <form action="pagar.php" method="POST">
              
-             <input type="hidden" value="<?php echo $f->clave; ?>" name="clave" size="40">
-              <input type="hidden" value="<?php echo $f->nombre; ?>" name="nombre" size="40">
-              <input type="hidden" value="<?php echo $_GET['precio'] ?>" name="total" size="40">
-              <input type="submit" value="Seleccionar cliente">
-              </form>
+             <input type="" value="<?php echo $f->clave; ?>" name="clave" size="40">
+              <input type="" value="<?php echo $f->nombre; ?>" name="nombre" size="40">
+              <input type="" value="<?php echo $_GET['precio'] ?>" name="total" size="40">
+             
+
+
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+Cobrar</button>
+
+            
               </td>
 
                 <td scope="row"><?php echo $f->clave; ?></td>
@@ -108,10 +117,37 @@ if (empty($_POST['name3']))
                 <td><?php echo $f->domicilio; ?></td>
                 </tr>
    
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CRITERIOS DE ACEPTACION</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Deseas cargar la cuenta al cliente <?php echo $f->nombre; ?>      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input class="btn btn-primary" type="submit" value="Seleccionar cliente">
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
     <?php endforeach; ?>
   </tbody>
-</table>
-<?php else : ?>
+</table> 
+
+
+
+
+      <?php else : ?>
+
+
     <h4>No se encontraron resultados con esta busquedad</h4>
     <?php endif;
   }?>

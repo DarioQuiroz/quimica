@@ -113,7 +113,7 @@ echo "<script> alert('elemento borrado'); </script>";
             {
                 ?>
                   <script type="text/javascript">
-                alert("¡ Error al registrar Producto!");
+                alert("¡ Error al registrar cliente!");
                 window.location.href='registro_cliente.php';
              
             </script>
@@ -126,7 +126,7 @@ echo "<script> alert('elemento borrado'); </script>";
                 
                  ?>
                 <script type="text/javascript">
-                alert("!Producto registrado exitosamente!");
+                alert("!Cliente registrado exitosamente!");
                 window.location.href='registro_cliente.php';
             </script>
             <?php

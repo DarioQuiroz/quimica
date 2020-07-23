@@ -150,7 +150,9 @@
                   </a>
                   <div class="item-details">
                     <h3 class="item-title"><a href=""> <?php echo $producto['modelo']; ?></a></h3>
-                    <h4 class="item-price"><?php echo $producto['PRECIO']; ?></h4>
+                    <h4 class="item-price"> PRECIO $<?php echo $producto['PRECIO']; ?></h4>
+                    <h4 class="item-price"> CANTIDAD =<?php echo $producto['CANTIDAD']; ?></h4>
+
                   </div>
 
 

@@ -29,23 +29,23 @@ require_once "cavecera.php";
 
   <div class="form-group">
     <label for="provider_phone">Cantidad</label>
-    <input class="form-control" type="number" name="telefono" id="telefono" required/>
+    <input class="form-control" value="" onchange="multiplicar();" type="number" name="telefono" id="telefono" required/>
   </div>
 
   <div class="form-group">
     <label for="provider_rfc">Cantidad total</label>
-    <input class="form-control" size="12" maxlength="12" type="text" onKeyUp="this.value=this.value.toUpperCase();" name="rfc" id="rfc" required/>
+    <input class="form-control" size="12" maxlength="12" type="number"  name="rfc" id="rfc" required/>
    
   </div>
 
   <div class="form-group">
     <label for="provider_email"> Valor unitario</label>
-    <input class="form-control" type="text" name="correo" id="correo" required/>
+    <input value="" onchange="multiplicar();"  class="form-control" type="number" name="correo" id="correo" required/>
   </div>
 
   <div class="form-group">
     <label for="provider_website">Valor total</label>
-    <input class="form-control" type="text" name="sitioweb" id="sitioweb" required/>
+    <input class="form-control" type="text" name="sitioweb"  value="" id="sitioweb" required/>
   </div>
 
 
@@ -59,6 +59,17 @@ require_once "cavecera.php";
             </form>
         </div>
         </div>
+
+
+        <script>
+
+function multiplicar(){
+  m1 = document.getElementById("telefono").value;
+  m2 = document.getElementById("correo").value;
+  r = m1*m2;
+  document.getElementById("sitioweb").value = r;
+}   </script>
+
 
 
         <?php require_once "footer.php"; ?>

@@ -46,3 +46,17 @@
   position: relative;
   top: 40%;
 }
+
+
+
+.contenedor-modal3{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.contenedor-modal3button {
+  position: relative;
+  top: 40%;
+}

@@ -29,10 +29,15 @@ echo $total;
 
 
 
+
+
+
+
         if (!$resultado) {
             echo("Error description: " . mysqli_error($conn));die;
          }
     
+         
          session_start();
      
          session_destroy();
