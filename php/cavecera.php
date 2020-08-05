@@ -60,7 +60,7 @@
 
 
       <!-- Site Logo -->
-      <a href="ventas.php" class="site-logo visible-desktop">
+      <a href="principal.php" class="site-logo visible-desktop">
         <img id="logo" src="img/office class logo.jpg" style="width:100%;     margin-left: 25%;" alt="logo">
       </a><!-- site-logo.visible-desktop -->
       <!-- site-logo.visible-mobile -->
@@ -76,7 +76,7 @@
         <ul class="menu">
 
           <li class="menu-item-has-children">
-            <a href="ventas.php">Ventas</a>
+            <a href="principal.php">Ventas</a>
             
 
           </li>
@@ -96,10 +96,8 @@
             <a href="#">Ventas</a>
             <ul class="sub-menu" id="sub1">
               <li><a href="resumen de ventas.php?fec=1">Resumen de la semana</a></li>
-
-              <li><a href="resumen de ventas.php?fec=2">Resumen del mes</a></li>
-              <li><a href="resumen de ventas.php?fec=3">Resumen del año</a></li>
               <li><a href="inventario.php">Inventario</a></li>
+              <li><a href="ventas.php">Resumen de ventas</a></li>
             </ul>
           </li>
 
@@ -111,9 +109,9 @@
             <a href="">clientes</a>
             <ul class="sub-menu" id="sub1">
             <li><a href="registro_cliente.php">Registrar clientes</a></li>
-              <li><a href="clientes.php?precio=">Editar clientes</a></li>
-              <li><a href="clientes.php?precio=">Ver clientes</a></li>
-              <li><a href="clientes.php">Adeudo de clientes</a></li>
+              <li><a href="clientes.php?editar=1">Editar clientes</a></li>
+              <li><a href="clientes.php?ver=2">Ver clientes</a></li>
+              <li><a href="clientes.php?adeudo=3">Adeudo de clientes</a></li>
              
             </ul>
           </li>

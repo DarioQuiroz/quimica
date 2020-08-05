@@ -33,6 +33,8 @@ function get_prod(){
 }
 
 
+
+
 function get_prod_clave($search){
 	$images = array();
 	$con = con();
@@ -44,6 +46,16 @@ function get_prod_clave($search){
 }
 
 
+
+function get_detalleventa($search){
+	$images = array();
+	$con = con();
+	$query=$con->query('select * from detalleventa where idventa like "%'.$search.'%"');
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
 
 
 function get_todo($search){
@@ -131,6 +143,19 @@ function get_client(){
 	}
 	return $images;
 }
+
+
+
+function get_deudas($search){
+	$image = null;
+	$con = con();
+	$query=$con->query('SELECT * FROM adeudo  where idcliente like "%'.$search.'%"');
+	while($r=$query->fetch_object()){
+		$image = $r;
+	}
+	return $image;
+}
+
 
 
 

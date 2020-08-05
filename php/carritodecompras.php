@@ -26,7 +26,7 @@ include 'cavecera.php' ?>
         </p>
         <div class="shopping-cart">
           <?php
-      global $total;
+      global $total1;
 
 
 
@@ -66,6 +66,7 @@ include 'cavecera.php' ?>
             </div><!-- .item -->
             <?php
             $total = ($producto['CANTIDAD'] * $producto['PRECIO']);
+            $total1=$total1+$total;
           }
           ?>
 
@@ -81,7 +82,7 @@ include 'cavecera.php' ?>
       <div class="col-md-3 col-md-offset-1 col-sm-4 padding-bottom-2x">
         <aside>
           <h3 class="toolbar-title">Subtotal del carrito:</h3>
-          <h4 id="totalpay">$ <?php echo number_format($total, 2) ?> </h4>
+          <h4 id="totalpay">$ <?php echo number_format($total1, 2) ?> </h4>
           <p class="text-sm text-gray">* Nota: Esta cantidad no incluye los gastos de envío internacional. Podrás calcular los gastos de envío en la caja.</p>
        
           <a href="#" class="btn btn-default btn-block waves-effect waves-light">Actualización de la compra</a>
@@ -112,7 +113,8 @@ include 'cavecera.php' ?>
       <div class="contenedor-modal2">
   <button type="button" class="btn btn-primary btn-block waves-effect waves-light space-top-none" data-toggle="modal" data-target="#miModal2">Venta de credito</button>
 </div>
-       <a href="checkout.php" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Pagar de contado</a>
+<button type="button" class="btn btn-primary btn-block waves-effect waves-light space-top-none" data-toggle="modal" data-target="#miModalcontado">Venta de contado</button>
+
 
       </div>
     </div>
@@ -132,9 +134,34 @@ include 'cavecera.php' ?>
       </div>
       <div class="modal-body">
 
-        <a href='registro_cliente.php?precio=<?php echo '<script>  document.getElementById("totalpay").value;
+        <a href='registro_cliente.php?precio=<?php echo '<script> document.getElementById("totalpay").value;
    </script>' ?>' class="btn btn-primary btn-block waves-effect waves-light space-top-none">Reistrar cliente </a>
-        <a href="clientes.php?precio=<?php echo number_format($total, 2) ?>" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Seleccionar cliente </a>
+        <a href="clientes.php?precio=<?php echo number_format($total1, 2) ?>" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Seleccionar cliente </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="miModalcontado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Ingresa el nombre</h4>
+      </div>
+      <div class="modal-body">
+
+<FORM action="pagar.php" method="POST">
+<label for="provider_rfc">Nombre del Cliente</label>
+    <input class="form-control" size="12" maxlength="12" type="text"  name="nombre" id="nombre" required/>
+    <input class="btn-block effect btn btn-primary  light space-top-none" type="submit" name="btnAccion" value="Cobrar">
+
+</FORM>
 
       </div>
     </div>
