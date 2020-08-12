@@ -12,6 +12,7 @@ include 'carrito.php';
     $clave = $_GET['cliente'];
         $nombre = $_GET['nombre'];
         $pres = $_GET['precio'];
+        $forma=$_GET['forma'];
 
        // $total = $_POST['total'];
   
@@ -26,9 +27,9 @@ include 'carrito.php';
 
           
         $insertar="INSERT INTO `tblventas`
-        (`id`, `fecha`, `nombre`, `total`, `clave`) 
+        (`id`, `fecha`, `nombre`, `total`, `clave`, `forma`) 
         VALUES 
-        (NULL, NOW(), '$nombre', '$total', '$clave');";
+        (NULL, NOW(), '$nombre', '$total', '$clave', '1');";
         $resultado=mysqli_query($conn, $insertar);
 
 
@@ -81,7 +82,7 @@ include 'carrito.php';
 
           }
         if (!$resultado) {
-            echo("Error description: " . mysqli_error($conn));die;
+         //   echo("Error description: " . mysqli_error($conn));die;
          }
          if ($nombre=="" && $clave=="") {
            } else {
@@ -90,12 +91,19 @@ include 'carrito.php';
             (NULL, '$clave', '$nombre', '$pres','$idconsulta')";
             $resultado=mysqli_query($conn, $insertar2);     
             if (!$resultado) {
-              echo("Error description: " . mysqli_error($conn));die;
+           //   echo("Error description: " . mysqli_error($conn));die;
            }
          }
          
          $nombre=$_GET['cliente'];
-         header("location:../fpdf/fpdf-basic.php?cliente=$nombre");
+       //  header("location:../fpdf/fpdf-basic.php?cliente=$nombre");
         
     
          ?>
+
+<script type="text/javascript">
+//	alert("¡Datos Actualizados Exitosamante!");
+window.open("../fpdf/fpdf-basic.php?cliente="<?php $nombre?>, "_blank", "toolbar=yes");
+
+	window.location.href='principal.php';
+</script>

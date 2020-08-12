@@ -161,6 +161,7 @@ $rfc =$_POST['rfc'];
 $correo=$_POST['correo'];
 $sitioweb=$_POST['sitioweb'];
 $Linea=$_POST['Linea'];
+$folio=$_POST['folio'];
 
 
 
@@ -173,9 +174,7 @@ if(!$resultado)
 {
     ?>
       <script type="text/javascript">
-    alert("¡ Error al registrar Producto!");
-    window.location.href='captura_producto.php';
- 
+    alert("¡ Error al registrar Producto!"); 
 </script>
    
 <?php
@@ -187,15 +186,117 @@ else{
      ?>
     <script type="text/javascript">
 	alert("!Producto registrado exitosamente!");
-	window.location.href='captura_producto.php';
+    </script>
+<?php
+
+}
+
+
+
+$rfcprov=$_GET['clave'];
+$rs==$_GET['rs'];
+
+$insertar2="INSERT INTO adeudoproveedoores ( `id`, `fecha`, `claveproducto`, `total`, `foliocompra`, `rfc`, `razonsocial`)
+ VALUES (NULL, NOW(), '$nombre', '$sitioweb', '$folio', ' $rfcprov ', ' $rs ')";
+$resultado2=mysqli_query($conn, $insertar2);
+if(!$resultado2)
+{            echo("Error description: " . mysqli_error($conn));die;
+
+    ?>
+      <script type="text/javascript">
+    alert("¡ Error al registrar adeudo!");
+   window.location.href='captura_producto.php?clave=<?php $rfcprov  ?>&&<?php $rs  ?>';
+ 
+</script>
+   
+<?php
+
+}
+
+else{
+    
+     ?>
+    <script type="text/javascript">
+	alert("!adeudo registrado exitosamente!");
+    window.location.href='captura_producto.php?clave=<?php $rfcprov  ?>&&<?php $rs  ?>';
 </script>
 <?php
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mysqli_close($conn);
 
             break;
+
+        case 'Registrar proveedor':
+        
+            $conn = new mysqli("localhost", "root", "", "pruebas2");
+    
+            if (mysqli_connect_errno()) {
+            die("No se puede conectar a la base de datos:" . mysqli_connect_error());
+            }else{
+            
+               
+            }
+            
+            
+            $clave= $_POST['clave'];
+            $nombre=$_POST['nombre'];
+            
+
+            $insertar="INSERT INTO proveedores ( `rfc`, `razonsocial`)
+             VALUES ('$clave', '$nombre')";
+            $resultado=mysqli_query($conn, $insertar);
+            if(!$resultado)
+            {            echo("Error description: " . mysqli_error($conn));die;
+
+                ?>
+                  <script type="text/javascript">
+                alert("¡ Error al registrar cliente!");
+                window.location.href='nuevoproveedor.php';
+             
+            </script>
+               
+            <?php
+            
+            }
+            
+            else{
+                
+                 ?>
+                <script type="text/javascript">
+                alert("!Proveedor registrado exitosamente!");
+                window.location.href='nuevoproveedor.php';
+            </script>
+            <?php
+            
+            }
+            
+            mysqli_close($conn);
+            
+            
+            break;
+
 
 
             

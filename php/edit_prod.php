@@ -81,23 +81,18 @@ if (empty($_POST['name']))
 <?php require_once "cavecera.php"; ?>
 
 <div class="container" style="margin: 15%">
-    <div class="col-4 "></div>
+   
     <h1>Editar producto</h1>
 
-  </section>
-
-
-  <section class="container">
-    
-    <div class="col-4" style="margin-bottom: 3%;"></div>
- 
-    <div class="col-4" style="margin-bottom: 3%;"></div>
+  
+  
+  
     <?php if (count($files) > 0) : ?>
 
    
-      <div class="container">
+      <section class="container" style="align-items: center;">
         <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover">
+          <table style="align-items: center;" class="table">
             <thead>
               <tr>
                 <th scope="col">
@@ -108,7 +103,7 @@ if (empty($_POST['name']))
                 <h2>Nombre</h2>
                  
                 </th>
-                <th scope="col" style="display: table-cell; vertical-align: middle;"><h2>Ingrediente activo</h2>
+                <th scope="col" ><h2>Ingrediente activo</h2>
                 </th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -122,18 +117,17 @@ if (empty($_POST['name']))
                 <td><?php echo $f->nombre; ?></td>
                 <td><?php echo $f->in_act; ?></td>
                 <td><a href="form_edit_prod.php?id=<?php echo $f->clave; ?>">Modificar</a></td>
-                <td><a href="sumar_prod.php?id=<?php echo $f->clave; ?>">Sumar</a></td>
+                <td><a href="sumar_prod.php?id=<?php echo $f->clave; ?>&&precio=<?php echo $f->valor_unitario; ?>">Sumar</a></td>
                
                
               </tr>
               <?php endforeach; ?>
           </table>
         </div>
-      </div>
+      </section>
       <?php else : ?>
     <h4>No se encontraron resultados con esta busquedad</h4>
     <?php endif; ?>
-  </section>
 
    
   <div class="col-4" style="margin-bottom: 3%;"></div>

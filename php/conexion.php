@@ -107,6 +107,18 @@ function get_venta(){
 
 
 
+function get_proveedores(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * FROM proveedores order by rfc");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
+
+
 
 
 

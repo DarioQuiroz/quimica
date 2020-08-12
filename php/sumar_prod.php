@@ -96,6 +96,9 @@ function consultarprod( $no_prod )
 
   <p> Cantidad a Sumar <input type="text" name="cantidad" ></p>
 
+  <p> Folio de la nota <input type="text" name="folio" ></p>
+  <p> RFC del Poveedor <input type="text" name="rfcprov" ></p>
+
   <p>
     <input type="submit" value="Enviar">
   

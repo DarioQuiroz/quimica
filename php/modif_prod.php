@@ -33,7 +33,45 @@ ModificarProducto(
          linea='".$linea."'
          WHERE clave='".$clave."' ";
 	$conn->query($sentencia) or die ("Error al actualizar datos".mysqli_error($conn));
-	}
+        }
+        
+
+
+
+
+
+
+
+$rfcprov=$_GET['clave'];
+
+
+$insertar2="INSERT INTO adeudoproveedoores ( `id`, `fecha`, `claveproducto`, `total`, `foliocompra`, `rfc`)
+ VALUES (NULL, NOW(), '$clave', '$valor_total', '$folio', ' $rfcprov ')";
+$resultado2=mysqli_query($conn, $insertar2);
+if(!$resultado2)
+{            echo("Error description: " . mysqli_error($conn));die;
+
+    ?>
+      <script type="text/javascript">
+    alert("¡ Error al registrar adeudo!");
+   window.location.href='captura_producto.php?clave=<?php $rfcprov  ?>';
+ 
+</script>
+   
+<?php
+
+}
+
+else{
+    
+     ?>
+    <script type="text/javascript">
+	alert("!adeudo registrado exitosamente!");
+    window.location.href='captura_producto.php?clave=<?php $rfcprov  ?>';
+</script>
+<?php
+
+}
 ?>
 
 <script type="text/javascript">

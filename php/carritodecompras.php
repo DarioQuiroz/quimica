@@ -104,12 +104,6 @@ include 'cavecera.php' ?>
       </div>
       <div class="modal-body">
 
-
-
-
-
-
-
       <div class="contenedor-modal2">
   <button type="button" class="btn btn-primary btn-block waves-effect waves-light space-top-none" data-toggle="modal" data-target="#miModal2">Venta de credito</button>
 </div>

@@ -6,7 +6,7 @@ include 'carrito.php';
 
 
 if (empty($_POST['name3']))
-$files = get_client();
+$files = get_proveedores();
 
  else
   
@@ -17,11 +17,13 @@ $files = get_client();
 ?>
 <?php
   
-  if ($_GET['editar']==1) {
+  if ($_GET['ver']==1) {
     if (count($files) > 0) : ?>
   <section class="container">
     <div class="col-4 "></div>
-    <h1>Modificar clientes</h1>
+
+<div class="col-4" style="margin-bottom:15%;"></div>
+    <h1>Seleccionar Proveedor</h1>
 
   </section>
 
@@ -36,11 +38,8 @@ $files = get_client();
         <thead>
           <tr>
           <th scope="col"></th>
-            <th scope="col">clave</th>
-            <th scope="col">nombre</th>
-            <th scope="col">apellido paterno</th>
-            <th scope="col">apellido materno</th>
-            <th scope="col">domicilio</th>
+            <th scope="col">RFC</th>
+            <th scope="col">Razon Social</th>
           </tr>
         </thead>
       
@@ -50,14 +49,12 @@ $files = get_client();
                     <tr>
                     <td scope="row">
                       
-                      <a data-toggle="modal" href="modif_client.php?clave=<?php echo $f->clave; ?>">Modificar</a>
+                      <a data-toggle="modal" href="captura_producto.php?clave=<?php echo $f->rfc; ?>&&rs=<?php echo $f->razonsocial; ?>">Seleccionar</a>
                     </td>
                     
-                      <td scope="row"><?php echo $f->clave; ?></td>
-                      <td><?php echo $f->nombre; ?></td>
-                      <td><?php echo $f->apellido_paterno; ?></td>
-                      <td><?php echo $f->apellido_materno; ?></td>
-                      <td><?php echo $f->domicilio; ?></td>
+                      <td scope="row"><?php echo $f->rfc; ?></td>
+                      <td><?php echo $f->razonsocial; ?></td>
+         
                       </tr>
          
           <?php endforeach; ?>
@@ -78,11 +75,9 @@ $files = get_client();
         <thead>
           <tr>
           <th scope="col"></th>
-            <th scope="col">clave</th>
-            <th scope="col">nombre</th>
-            <th scope="col">apellido paterno</th>
-            <th scope="col">apellido materno</th>
-            <th scope="col">domicilio</th>
+            <th scope="col">RFC</th>
+            <th scope="col">Razon Social</th>
+
           </tr>
         </thead>
       
@@ -91,11 +86,9 @@ $files = get_client();
         <?php foreach ($files as $f) : ?>
                     <tr>
                    
-                      <td scope="row"><?php echo $f->clave; ?></td>
-                      <td><?php echo $f->nombre; ?></td>
-                      <td><?php echo $f->apellido_paterno; ?></td>
-                      <td><?php echo $f->apellido_materno; ?></td>
-                      <td><?php echo $f->domicilio; ?></td>
+                      <td scope="row"><?php echo $f->rfc; ?></td>
+                      <td><?php echo $f->rfc; ?></td>
+                      <td><?php echo $f->razonsocial; ?></td>
                       </tr>
          
           <?php endforeach; ?>
@@ -122,11 +115,9 @@ $files = get_client();
         <thead>
           <tr>
           <th scope="col"></th>
-            <th scope="col">clave</th>
-            <th scope="col">nombre</th>
-            <th scope="col">apellido paterno</th>
-            <th scope="col">apellido materno</th>
-            <th scope="col">domicilio</th>
+            <th scope="col">RFC</th>
+            <th scope="col">Razon Social</th>
+           
           </tr>
         </thead>
       
@@ -136,15 +127,12 @@ $files = get_client();
                     <tr>
                     <td scope="row">
                       
-                      <a data-toggle="modal" href="detallesadeudo.php?clave=<?php echo $f->clave; ?>">Ver Deudas</a>
+                      <a data-toggle="modal" href="detallesadeudo.php?clave=<?php echo $f->rfc; ?>&opc=2">Ver Deudas</a>
                     </td>
                     
-                      <td scope="row"><?php echo $f->clave; ?></td>
-                      <td><?php echo $f->nombre; ?></td>
-                      <td><?php echo $f->apellido_paterno; ?></td>
-                      <td><?php echo $f->apellido_materno; ?></td>
-                      <td><?php echo $f->domicilio; ?></td>
-                      </tr>
+                      <td scope="row"><?php echo $f->rfc; ?></td>
+                      <td><?php echo $f->razonsocial; ?></td>
+                   </tr>
          
           <?php endforeach; ?>
         </tbody>
@@ -180,7 +168,7 @@ $files = get_client();
   <?php foreach ($files as $f) : ?>
               <tr>
               <td scope="row"> 
-              <a class="btn btn-primary" href="pagar.php?cliente=<?php echo $f->clave; ?>&&nombre=<?php echo $f->nombre; ?>&&precio=<?php echo $_GET['precio'] ?>&&forma=1">cobrar</a>
+              <a class="btn btn-primary" href="pagar.php?cliente=<?php echo $f->clave; ?>&&nombre=<?php echo $f->nombre; ?>&&precio=<?php echo $_GET['precio'] ?>">cobrar</a>
            
             
       <!-- Button trigger modal -->

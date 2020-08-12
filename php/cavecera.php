@@ -84,7 +84,14 @@
             <a href="#">Producto</a>
             <ul class="sub-menu">
 
-            <li><a  href="captura_producto.php">Registrar nuevo producto </a></li>
+            <li class="menu-item-has-children"><a >Registrar nuevo producto </a>
+            <ul class="sub-menu">
+            <li><a href="proveedores.php?ver=1">Agregar producto a credito</a></li>
+          <li><a   href="captura_producto.php?forma=2">Agregar producto de contado </a></li>
+
+            </li>
+            </ul>
+        
           <li><a  href="edit_prod.php">Agregar a producto existetnte</a></li>
           <li><a  href="edit_prod.php">Editar producto</a></li>
 
@@ -101,8 +108,7 @@
             </ul>
           </li>
 
-          <li><a href="#">RECEPCIÓN</a>
-          </li>
+       
 
 
           <li class="menu-item-has-children">
@@ -116,6 +122,16 @@
             </ul>
           </li>
 
+
+          <li class="menu-item-has-children">
+            <a href="#">Proveedores</a>
+            <ul class="sub-menu">
+            <li><a  href="nuevoproveedor.php">Registrar nuevo proveedor </a></li>
+          <li><a  href="proveedores.php?ver=2">Ver provedores registrados</a></li>
+          <li><a  href="proveedores.php?adeudo=3">ver adeudo a proveedores</a></li>
+
+            </ul>
+          </li>
         </ul><!-- .menu -->
       </nav><!-- .main-navigation -->
 
@@ -176,3 +192,7 @@
         </div><!-- .inner -->
       </div><!-- .toolbar -->
     </header><!-- .navbar.navbar-sticky -->
+
+            
+
+

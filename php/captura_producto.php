@@ -54,6 +54,11 @@ require_once "cavecera.php";
     <input class="form-control" type="text" name="Linea" id="Linea" required/>
   </div>
 
+  <div class="form-group">
+    <label for="provider_website">Folio de compra</label>
+    <input class="form-control" type="text" name="folio" id="folio" required/>
+  </div>
+
              <input class="btn btn-primary" type="submit" name="btnAccion" value="Agregrar">
 <a class="btn btn-primary" href="provedores_public.php">cancelar</a>
             </form>
