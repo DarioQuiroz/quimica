@@ -52,15 +52,25 @@ include 'cavecera.php' ?>
               
               <form action="" method="post">
               <a class="incr-btn" id='aumentar'  onclick="carrito(this)" value="aumentar" data-action="decrease" href="#">–</a>
-                  <input class="quantity" onchange="multiplicar();" type="text" id="act" value="<?php echo $producto['CANTIDAD']; ?>">
+                  <input class="quantity" onchange="multiplicar();" type="text" id="act" name="act" value="<?php echo $producto['CANTIDAD']; ?>">
                   <a class="incr-btn" id='disminuir' onchange="multiplicar();"  onclick="carrito(this)" value="disminuir" data-action="increase" href="#">+</a>
                 <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($producto['modelo'], code, key); ?>">
-                <button class="btn btn-danger" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="eliminar" title="Remove">
+                <button class="btn btn-danger" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="Eliminar" title="Remove">
                   <i class="material-icons remove_shopping_cart"></i>
                 </button>
-                <input type="submit" name="submit" value="Submit Form"><br>
+            
 
-              </form>
+
+                    <input type="hidden" name="ID" id="ID" value="<?php echo openssl_encrypt( $producto['ID'], code, key);?>">
+                    <input type="hidden" name="modelo" id="modelo" value="<?php echo openssl_encrypt(  $producto['modelo'], code, key);?>">
+                    <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt(  $producto['PRECIO'] , code, key);?>">
+                   
+
+                  <button class="btn btn-danger" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="render" title="Render">
+                  <i class="material-icons remove_shopping_cart"></i>
+                </button>
+                  </form>
+
               </div>
           
             </div><!-- .item -->
@@ -82,9 +92,7 @@ include 'cavecera.php' ?>
       <div class="col-md-3 col-md-offset-1 col-sm-4 padding-bottom-2x">
         <aside>
           <h3 class="toolbar-title">Subtotal del carrito:</h3>
-          <h4 id="totalpay">$ <?php echo number_format($total1, 2) ?> </h4>
-          <p class="text-sm text-gray">* Nota: Esta cantidad no incluye los gastos de envío internacional. Podrás calcular los gastos de envío en la caja.</p>
-       
+          <h4 id="totalpay">$ <?php echo number_format($total1, 2) ?> </h4>       
           <a href="#" class="btn btn-default btn-block waves-effect waves-light">Actualización de la compra</a>
         
 
@@ -128,9 +136,8 @@ include 'cavecera.php' ?>
       </div>
       <div class="modal-body">
 
-        <a href='registro_cliente.php?precio=<?php echo '<script> document.getElementById("totalpay").value;
-   </script>' ?>' class="btn btn-primary btn-block waves-effect waves-light space-top-none">Reistrar cliente </a>
-        <a href="clientes.php?precio=<?php echo number_format($total1, 2) ?>" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Seleccionar cliente </a>
+        <a href='registro_cliente.php?precio=<?php echo number_format($total1, 2) ?>&&modo=1' class="btn btn-primary btn-block waves-effect waves-light space-top-none">Reistrar cliente </a>
+        <a href="clientes.php?precio=<?php echo number_format($total1, 2) ?>&&modo=1" class="btn btn-primary btn-block waves-effect waves-light space-top-none">Seleccionar cliente </a>
 
       </div>
     </div>

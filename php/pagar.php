@@ -86,16 +86,21 @@ include 'carrito.php';
          }
          if ($nombre=="" && $clave=="") {
            } else {
-            $insertar2="INSERT INTO `adeudo` (`id`, `idcliente`, `nombrecliente`, `total`, `idventa`) 
+            $insertar2="INSERT INTO `adeudo` (`id`, `idcliente`, `nombrecliente`, `total`, `idventa`, `forma`, `adeudo`) 
             VALUES 
-            (NULL, '$clave', '$nombre', '$pres','$idconsulta')";
+            (NULL, '$clave', '$nombre', '$pres','$idconsulta', '1', '$pres')";
             $resultado=mysqli_query($conn, $insertar2);     
             if (!$resultado) {
            //   echo("Error description: " . mysqli_error($conn));die;
            }
          }
+         if ($_GET['cliente']="") {
+          $nombre=$_GET['cliente'];
+         } else {
+          $nombre=$_POST['nombre'];
+         }
          
-         $nombre=$_GET['cliente'];
+        
        //  header("location:../fpdf/fpdf-basic.php?cliente=$nombre");
         
     
@@ -103,7 +108,7 @@ include 'carrito.php';
 
 <script type="text/javascript">
 //	alert("¡Datos Actualizados Exitosamante!");
-window.open("../fpdf/fpdf-basic.php?cliente="<?php $nombre?>, "_blank", "toolbar=yes");
+window.open("../fpdf/fpdf-basic.php?cliente=<?php echo $nombre ?>", "_blank", "toolbar=yes");
 
 	window.location.href='principal.php';
 </script>

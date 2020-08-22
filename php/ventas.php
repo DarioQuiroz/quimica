@@ -85,11 +85,7 @@ if (empty($_POST['name3']))
                
                 </th>
                
-                <th scope="col" style="display: table-cell; vertical-align: middle;">
-                <form method="post" class="form-signin col-12">
-                </form></th>
-
-                </th>
+            
               </tr>
             </thead>
             <?php foreach ($files as $f) : ?>

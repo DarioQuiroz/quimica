@@ -80,7 +80,7 @@ $pdf->Cell(40, 15,"$ $loquefue" , 1, 0, 'R', 1);
 //Mostramos el documento pdf
 $pdf->Output('ficha.pdf','I');
 
-
+/*
 session_start();
-session_destroy();
+session_destroy();*/
 ?>

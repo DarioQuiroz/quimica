@@ -58,6 +58,16 @@ function get_detalleventa($search){
 }
 
 
+function get_detallecompras($search){
+	$images = array();
+	$con = con();
+	$query=$con->query('select * from comprasproducto where foliocompra like "%'.$search.'%"');
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
 function get_todo($search){
 	$images = array();
 	$con = con();
@@ -155,6 +165,7 @@ function get_client(){
 	}
 	return $images;
 }
+
 
 
 

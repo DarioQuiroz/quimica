@@ -38,7 +38,7 @@ require_once "cavecera.php";
 
 
              <input class="btn btn-primary" type="submit" name="btnAccion" value="Registrar">
-<a class="btn btn-primary" href="provedores_public.php">cancelar</a>
+<a class="btn btn-primary" href="principal.php">cancelar</a>
             </form>
         </div>
         </div>

@@ -59,9 +59,26 @@ require_once "cavecera.php";
     <input class="form-control" type="text" name="folio" id="folio" required/>
   </div>
 
+  <div class="form-group">
+    <label for="provider_website">Clave proveedor</label>
+    <input class="form-control" type="text" name="claprov" id="claprov" value="<?php echo $_GET ['clave']; ?>" required/>
+  </div>
+
+  <div class="form-group">
+    <label for="provider_website">Razon social</label>
+    <input class="form-control" type="text" name="razo" id="razo" value="<?php echo $_GET ['rs']; ?>" required/>
+  </div>
+
+  <div class="form-group">
+    <label for="provider_website">Opcion</label>
+    <input class="form-control" type="text" name="razo" id="razo" value="<?php echo $_GET ['opc']; ?>" required/>
+  </div>
+
              <input class="btn btn-primary" type="submit" name="btnAccion" value="Agregrar">
 <a class="btn btn-primary" href="provedores_public.php">cancelar</a>
             </form>
+
+            
         </div>
         </div>
 

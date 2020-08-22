@@ -76,6 +76,7 @@ function consultarprod( $no_prod )
     
     <?php  
      
+     $precio=$_GET['precio'];
       require_once "cavecera.php";
    
  ?>
@@ -85,7 +86,7 @@ function consultarprod( $no_prod )
 
 
 
-      <form action="act_prod_sum.php" method="POST">
+      <form action="act_prod_sum.php?precio=<?php echo $precio?> " method="POST">
   <p> Nombre:<label for="provider_name"><?php echo $consulta[1] ?></label></p>
   
   <p>Clave:<label for="provider_name"><?php echo $consulta[0] ?></label></p>

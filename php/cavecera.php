@@ -87,7 +87,7 @@
             <li class="menu-item-has-children"><a >Registrar nuevo producto </a>
             <ul class="sub-menu">
             <li><a href="proveedores.php?ver=1">Agregar producto a credito</a></li>
-          <li><a   href="captura_producto.php?forma=2">Agregar producto de contado </a></li>
+          <li><a   href="proveedores.php?ver=1&&opc=2">Agregar producto de contado </a></li>
 
             </li>
             </ul>
@@ -171,7 +171,8 @@
 
 
                   <form action="" method="post">
-                  <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($producto['modelo'], code, key); ?>">                    <button class="btn btn-danger close-btn material-icons close" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="eliminar" title="Remove">
+                  <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($producto['modelo'], code, key); ?>">       
+                   <button class="btn btn-danger close-btn material-icons close" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="eliminar" title="Remove">
                     </button>
                   </form>
 

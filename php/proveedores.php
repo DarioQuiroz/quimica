@@ -45,11 +45,30 @@ $files = get_proveedores();
       
                    
         <tbody>
-        <?php foreach ($files as $f) : ?>
+        
+        <?php if ($_GET['opc']=2) {
+
+       foreach ($files as $f) : ?>
+        <tr>
+        <td scope="row">
+          
+          <a data-toggle="modal" href="captura_producto.php?clave=<?php echo $f->rfc; ?>&&rs=<?php echo $f->razonsocial; ?>&&opc=2">Seleccionar</a>
+        </td>
+        
+          <td scope="row"><?php echo $f->rfc; ?></td>
+          <td><?php echo $f->razonsocial; ?></td>
+
+          </tr>
+
+<?php endforeach; 
+
+        } else {
+          # code...
+           foreach ($files as $f) : ?>
                     <tr>
                     <td scope="row">
                       
-                      <a data-toggle="modal" href="captura_producto.php?clave=<?php echo $f->rfc; ?>&&rs=<?php echo $f->razonsocial; ?>">Seleccionar</a>
+                      <a data-toggle="modal" href="captura_producto.php?clave=<?php echo $f->rfc; ?>&&rs=<?php echo $f->razonsocial; ?>&&opc=1">Seleccionar</a>
                     </td>
                     
                       <td scope="row"><?php echo $f->rfc; ?></td>
@@ -57,7 +76,9 @@ $files = get_proveedores();
          
                       </tr>
          
-          <?php endforeach; ?>
+          <?php endforeach; 
+        }
+       ?>
         </tbody>
       </table>
 

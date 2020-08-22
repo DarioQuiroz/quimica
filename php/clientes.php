@@ -136,7 +136,7 @@ $files = get_client();
                     <tr>
                     <td scope="row">
                       
-                      <a data-toggle="modal" href="detallesadeudo.php?clave=<?php echo $f->clave; ?>">Ver Deudas</a>
+                      <a data-toggle="modal" href="detallesadeudo.php?clave=<?php echo $f->clave; ?>&&opc=3">Ver Deudas</a>
                     </td>
                     
                       <td scope="row"><?php echo $f->clave; ?></td>
