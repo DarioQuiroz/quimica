@@ -65,8 +65,11 @@ if (empty($_POST['name3']))
         <div class="col-3"></div>
         <div class="col-3"></div>
         <div class="col-3"></div>
-        <div class="col-3" style="text-align: right;"> <a href="carritodecompras.php" class="btn btn-success" > Cobrar</a>
-        </div>
+        <div class="col-12">  <a href="cerrardia.php"  class="btn btn-warning" > Cerrar Día</a>
+      
+        <a href="carritodecompras.php" class="btn btn-success" style="text-align: right;"> Cobrar</a>
+       </div>
+       
       </div>
     </div>
       <div class="container">

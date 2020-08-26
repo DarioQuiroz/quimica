@@ -1,58 +1,38 @@
+<?php 
 
-
-
-
-<?php
 include "conexion.php";
 include 'config.php';
 include 'carrito.php';
 
 
 
-if (empty($_POST['feinf']) && empty($_POST['fesu']))
-  $files = get_venta();
+if (empty($_POST['name3']))
+  $files = get_ventanow();
 
  else
  
+  $files = get_todo($_POST['name3']);
 
-	
+  if (empty($_POST['name1']))
+  {
+    
+  }
+  //$files = get_imgs_porid();
 
- $files=get_todo_fecha($_POST['feinf'], $_POST['fesu']);
+ else
+ 
+  $files = search_genricoid($_POST['name1']);
 
-
-
-
-  require_once "cavecera.php";
 ?>
 
 
 
-<div class="col-4" style="margin-bottom: 15%;"></div>
-  <section class="container">
-    <div class="col-4 "></div>
-    <h1>Resumen de Ventas</h1>
-
-  </section>
-
-
-  <section class="container">
-    
-    
-    
-    <div class="col-4" style="margin-bottom: 3%;"></div>
-    <?php
+<?php
   
  
     if (count($files) > 0) : ?>
      <div class="container"> 
-     <form method="post" class="form-signin col-6">
-    
-                    <input type="date" name="feinf" class="form-control "min="2017-04-01"  placeholder="Fecha inferior" required>
-                    <input type="date" name="fesu" class="form-control "  max="" placeholder="Fecha superior" required>
-
-                    <button class="add-to-cart" name="btnAccion" value="todo" type="submit" > <em>Buscar</em></button>
-
-                  </form>
+   
                   </div>
    
                   <div class="col-4" style="margin-bottom: 3%;"></div>
@@ -141,8 +121,17 @@ color: black;
 
    
 
-    <div class="col-4" style="margin-bottom: 3%;"></div>
 
-    <?php require_once "footer.php"; ?>
+<?php include 'footer.php'; ?>
+</div><!-- .page-wrapper -->
 
-  
+<!-- JavaScript (jQuery) libraries, plugins and custom scripts -->
+<script src="../js/vendor/jquery-2.1.4.min.js"></script>
+<script src="../js/vendor/bootstrap.min.js"></script>
+<script src="../js/vendor/smoothscroll.js"></script>
+<script src="../js/vendor/velocity.min.js"></script>
+<script src="../js/vendor/waves.min.js"></script>
+<script src="../js/scripts.js"></script>
+
+<script src="../js/validar.js"></script>
+<link rel="stylesheet" href="../css/style.css" />

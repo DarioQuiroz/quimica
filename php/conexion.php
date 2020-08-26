@@ -114,6 +114,29 @@ function get_venta(){
 	return $images;
 }
 
+function get_ventanow(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * FROM tblventas WHERE DATE(fecha) = DATE(NOW())");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
+
+function get_todo_fecha($search, $search2){
+	$images = array();
+	$con = con();
+
+
+	$query=$con->query('SELECT * FROM `tblventas` WHERE fecha BETWEEN "'.$search.'" AND "'.$search2.'"  ');
+	
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
 
 
 
@@ -277,7 +300,7 @@ function search_imgs($search){
 function search_genriconombre($search){
     $images = array();
     $con = con();
-    $query=$con->query('select * from image where src like "%'.$search.'%"');
+	$query=$con->query('SELECT * FROM productos WHERE clave LIKE "%'.$search.'%" OR in_act LIKE "%'.$search.'%" OR nombre LIKE "%'.$search.'%"');
     while($r=$query->fetch_object()){
         $images[] = $r;
     }

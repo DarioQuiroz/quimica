@@ -272,7 +272,8 @@ $rfcprov=$_GET['clave'];
 $rs=$_GET['rs'];
 $opcion=$_GET['opc'];
 
-if ($opcion==1) {
+if ($opcion==1) 
+{
     
 $insertar2="INSERT INTO adeudoproveedoores ( `id`, `fecha`, `claveproducto`, `total`, `foliocompra`, `rfc`, `razonsocial`)
 VALUES (NULL, NOW(), '$nombre', '$sitioweb', '$folio', ' $rfcprov ', ' $rs ')";

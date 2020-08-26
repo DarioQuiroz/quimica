@@ -4,12 +4,16 @@
 
 <?php
 include "conexion.php";
+include 'config.php';
+include 'carrito.php';
 
-if (empty($_POST['name']))
+
+
+if (empty($_POST['name3']))
   $files = get_prod();
 
  else 
-  $files = search_genriconombre($_POST['name']);
+ $files = get_todo($_POST['name3']);
 
   if (empty($_POST['name1']))
   {
@@ -18,7 +22,7 @@ if (empty($_POST['name']))
 
  else
  
-  $files = search_genricoid($_POST['name1']);
+  $files = search_genricoid($_POST['name3']);
 
 
 
@@ -80,17 +84,29 @@ if (empty($_POST['name']))
 
 <?php require_once "cavecera.php"; ?>
 
-<div class="container" style="margin: 15%">
-   
+<div class="col-4" style="margin-bottom: 15%;"></div>
+  <section class="container">
+    <div class="col-4 "></div>
     <h1>Editar producto</h1>
 
   
+  </section>
+
+
   
-  
+
+                  </div>
     <?php if (count($files) > 0) : ?>
 
    
-      <section class="container" style="align-items: center;">
+      <section class="container">
+     
+    <form method="post" class="form-signin col-6">
+                    <input type="search" name="name3" class="form-control" placeholder="Buscar" required>
+                    <div class="space-10"></div>
+                    <button class="add-to-cart" name="btnAccion" value="todo" type="submit" > <em>Buscar</em></button>
+
+                  </form>
         <div class="table-responsive">
           <table style="align-items: center;" class="table">
             <thead>
@@ -117,7 +133,8 @@ if (empty($_POST['name']))
                 <td><?php echo $f->nombre; ?></td>
                 <td><?php echo $f->in_act; ?></td>
                 <td><a href="form_edit_prod.php?id=<?php echo $f->clave; ?>">Modificar</a></td>
-                <td><a href="sumar_prod.php?id=<?php echo $f->clave; ?>&&precio=<?php echo $f->valor_unitario; ?>">Sumar</a></td>
+                
+                <td><a href="proveedores.php?ide=<?php echo $f->clave; ?>&&sumar=1&&pres=<?php echo $f->valor_unitario; ?>">Sumar</a></td>
                
                
               </tr>
@@ -147,7 +164,7 @@ if (empty($_POST['name']))
 
   <footer class="footer text-muted bg-light">
     <div class="container">
-      <span>© 2019 Parque Industrial Queretaro</span>
+      <span>© </span>
       <ul class="list-inline mb-0 float-right">
       </ul>
     </div>

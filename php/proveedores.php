@@ -224,7 +224,64 @@ $files = get_proveedores();
 </div>
 </section>
 
-<?php include 'footer.php'; ?>
+
+
+
+<?php
+  
+  if ($_GET['sumar']==1) {
+    if (count($files) > 0) : ?>
+  <section class="container">
+    <div class="col-4 "></div>
+
+<div class="col-4" style="margin-bottom:15%;"></div>
+    <h1>Seleccionar Proveedor</h1>
+
+  </section>
+
+
+<div class="col-4" style="margin-bottom:1%;"></div>
+      <section id="principal"   class="container padding-top-3x padding-bottom">
+
+   
+      <div class="row padding-top">
+      
+      <table class="table">
+        <thead>
+          <tr>
+          <th scope="col"></th>
+            <th scope="col">RFC</th>
+            <th scope="col">Razon Social</th>
+          </tr>
+        </thead>
+      
+                  
+        <tbody>
+        
+        <?php if ($_GET['sumar']=1) {
+
+       foreach ($files as $f) : ?>
+        <tr>
+        <td scope="row">
+          
+        <a href="sumar_prod.php?id=<?php echo $_GET['ide'];?>&&precio=<?php echo $_GET['pres']; ?>&&proveedor=<?php echo $f->rfc; ?>&&rs=<?php echo $f->razonsocial; ?>">Sumar</a> </td>
+        </td>
+        
+          <td scope="row"><?php echo $f->rfc; ?></td>
+          <td><?php echo $f->razonsocial; ?></td>
+
+          </tr>
+
+<?php endforeach; 
+
+        } 
+       ?>
+        </tbody>
+      </table>
+
+          <?php endif;
+  }
+include 'footer.php'; ?>
 </div><!-- .page-wrapper -->
 
 <!-- JavaScript (jQuery) libraries, plugins and custom scripts -->

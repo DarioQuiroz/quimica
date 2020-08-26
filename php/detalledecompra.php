@@ -10,7 +10,7 @@ include 'carrito.php';
 
 
 if (empty($_POST['name3']))
-  $files = get_detallecompras($_GET['opc']);
+  $files = get_detallecompras($_GET['foco']);
 
  else
  
@@ -103,7 +103,7 @@ if (empty($_POST['name3']))
                 <td><?php echo $f->rfc; ?></td>
                 <td><?php echo $f->razonsocial; ?></td>
 
-                <td>     <?php if ($mostrar['forma']==1) {
+                <td>     <?php if ($f->forma==1) {
 echo '<h1 style="
 background-color: red;
 font-size: medium;

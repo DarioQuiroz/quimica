@@ -102,7 +102,6 @@
           <li class="menu-item-has-children">
             <a href="#">Ventas</a>
             <ul class="sub-menu" id="sub1">
-              <li><a href="resumen de ventas.php?fec=1">Resumen de la semana</a></li>
               <li><a href="inventario.php">Inventario</a></li>
               <li><a href="ventas.php">Resumen de ventas</a></li>
             </ul>

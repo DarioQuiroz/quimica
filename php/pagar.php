@@ -29,7 +29,7 @@ include 'carrito.php';
         $insertar="INSERT INTO `tblventas`
         (`id`, `fecha`, `nombre`, `total`, `clave`, `forma`) 
         VALUES 
-        (NULL, NOW(), '$nombre', '$total', '$clave', '1');";
+        (NULL, NOW(), '$nombre', '$total', '$clave', '$forma');";
         $resultado=mysqli_query($conn, $insertar);
 
 
@@ -94,20 +94,20 @@ include 'carrito.php';
            //   echo("Error description: " . mysqli_error($conn));die;
            }
          }
-         if ($_GET['cliente']="") {
+         if ($_GET['cliente']!="") {
           $nombre=$_GET['cliente'];
          } else {
           $nombre=$_POST['nombre'];
          }
          
         
-       //  header("location:../fpdf/fpdf-basic.php?cliente=$nombre");
+        // header("location:../fpdf/fpdf-basic.php?cliente=$nombre");
         
     
          ?>
 
 <script type="text/javascript">
-//	alert("¡Datos Actualizados Exitosamante!");
+//alert("¡Datos Actualizados Exitosamante!");
 window.open("../fpdf/fpdf-basic.php?cliente=<?php echo $nombre ?>", "_blank", "toolbar=yes");
 
 	window.location.href='principal.php';

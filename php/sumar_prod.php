@@ -92,14 +92,25 @@ function consultarprod( $no_prod )
   <p>Clave:<label for="provider_name"><?php echo $consulta[0] ?></label></p>
   <p>Cantidad Actual:<label for="provider_name"><?php echo $consulta[4] ?></label></p>
   <input type="hidden" value="<?php echo $consulta[4] ?>" name="actual" >
+  <input type="hidden" value="<?php echo $consulta[1] ?>" name="nombre" >
+  <input type="hidden" value="<?php echo $_GET['rs']; ?>" name="rs" >
 
 <input type="hidden" value="<?php echo $consulta[0] ?>" name="clave" >
 
   <p> Cantidad a Sumar <input type="text" name="cantidad" ></p>
 
   <p> Folio de la nota <input type="text" name="folio" ></p>
-  <p> RFC del Poveedor <input type="text" name="rfcprov" ></p>
+  <p> RFC del Poveedor <input type="text" name="rfcprov" value="<?php echo $_GET['proveedor'];?> " ></p>
+  <p> Forma de compra <select name="forma">
 
+
+
+<option>Crédito</option>
+
+<option>De Contado</option>
+
+</select></p>
+  
   <p>
     <input type="submit" value="Enviar">
   

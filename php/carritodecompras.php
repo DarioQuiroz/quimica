@@ -66,8 +66,8 @@ include 'cavecera.php' ?>
                     <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt(  $producto['PRECIO'] , code, key);?>">
                    
 
-                  <button class="btn btn-danger" data-toggle="tooltip" type="submit" data-placement="top" name="btnAccion" value="render" title="Render">
-                  <i class="material-icons remove_shopping_cart"></i>
+                  <button class="btn btn-warning"  type="submit"  name="btnAccion" value="render" title="Render">
+                 Actualizar
                 </button>
                   </form>
 
@@ -157,7 +157,7 @@ include 'cavecera.php' ?>
       </div>
       <div class="modal-body">
 
-<FORM action="pagar.php" method="POST">
+<FORM action="pagar.php?forma=2" method="POST">
 <label for="provider_rfc">Nombre del Cliente</label>
     <input class="form-control" size="12" maxlength="12" type="text"  name="nombre" id="nombre" required/>
     <input class="btn-block effect btn btn-primary  light space-top-none" type="submit" name="btnAccion" value="Cobrar">

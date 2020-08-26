@@ -87,7 +87,7 @@ color: black;
       ">Nota Pagada</h1>';
          }
          ?>
-       <?php
+       <?php 
           }
          ?>
          </th>
