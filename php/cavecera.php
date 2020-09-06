@@ -137,9 +137,9 @@
           <li class="menu-item-has-children">
             <a href="#">Otros</a>
             <ul class="sub-menu">
-            <li><a  href="capturargasto.php?opc=1">Registrar gasto   </a></li>
-            <li><a  href="gastos.php?ver=?opc=3">Ver gastos</a></li>
-            <li><a  href="gastos.php?opc=2">Modificar gasto </a></li>
+            <li><a  href="capturargasto.php">Registrar gasto   </a></li>
+            <li><a  href="gastos.php?ver=3">Ver gastos</a></li>
+            <li><a  href="gastos.php?ver=2">Modificar gasto </a></li>
          
             </ul>
           </li>

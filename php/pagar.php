@@ -99,9 +99,10 @@ include 'carrito.php';
          } else {
           $nombre=$_POST['nombre'];
          }
+         $dom=$_GET['dom'];
          
         
-         header("location:../fpdf/fpdf-basic.php?cliente=$nombre");
+         header("location:../fpdf/fpdf-basic.php?cliente=$nombre&forma=$forma&&dom=$dom");
         
     
          ?>

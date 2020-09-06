@@ -180,7 +180,7 @@ $files = get_client();
   <?php foreach ($files as $f) : ?>
               <tr>
               <td scope="row"> 
-              <a class="btn btn-primary" href="pagar.php?cliente=<?php echo $f->clave; ?>&&nombre=<?php echo $f->nombre; ?>&&precio=<?php echo $_GET['precio'] ?>&&forma=1">cobrar</a>
+              <a class="btn btn-primary" href="pagar.php?cliente=<?php echo $f->clave; ?>&&nombre=<?php echo $f->nombre; ?>&&precio=<?php echo $_GET['precio'] ?>&&forma=1&&dom=<?php echo $f->domicilio?>">cobrar</a>
            
             
       <!-- Button trigger modal -->
