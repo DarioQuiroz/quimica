@@ -118,7 +118,8 @@ echo "<script> alert('elemento borrado'); </script>";
             foreach($_SESSION['carrito'] as $indice=>$producto){
                 if($producto['ID']==$id){
                     unset($_SESSION['carrito'][$indice]);
-echo "<script> alert(' $nueva'); </script>";
+                    header("location:carritodecompras.php");
+
                 }
             }
         
@@ -453,6 +454,61 @@ mysqli_close($conn);
             break;
 
 
+
+
+
+
+            case 'Registrar gasto':
+        
+                $conn = new mysqli("localhost", "root", "", "pruebas2");
+        
+                if (mysqli_connect_errno()) {
+                die("No se puede conectar a la base de datos:" . mysqli_connect_error());
+                }else{
+                
+                   
+                }
+                
+                $concepto=$_POST['Concepto'];
+                $cantidad=$_POST['Cantidad'];
+                
+    
+                $insertar="INSERT INTO gastos (`id`,  `concepto`, `cantidad`, `fecha`)
+                 VALUES (NULL, '$concepto', '$cantidad', NOW())";
+                $resultado=mysqli_query($conn, $insertar);
+                if(!$resultado)
+                {            echo("Error description: " . mysqli_error($conn));die;
+    
+                    ?>
+                      <script type="text/javascript">
+                    alert("¡ Error al registrar asto!");
+                    window.location.href='capturargasto.php';
+                 
+                </script>
+                   
+                <?php
+                
+                }
+                
+                else{
+                    
+                     ?>
+                    <script type="text/javascript">
+                    alert("!gasto registrado exitosamente!");
+                    window.location.href='capturargasto.php';
+                </script>
+                <?php
+                
+                }
+                
+                mysqli_close($conn);
+                
+                
+                break;
+    
+    
+    
+                
 
             
 

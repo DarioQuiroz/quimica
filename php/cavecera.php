@@ -128,7 +128,19 @@
             <li><a  href="nuevoproveedor.php">Registrar nuevo proveedor </a></li>
           <li><a  href="proveedores.php?ver=2">Ver provedores registrados</a></li>
           <li><a  href="proveedores.php?adeudo=3">ver adeudo a proveedores</a></li>
+          <li><a  href="edit_prov.php">Editar Proveedores</a></li>
 
+            </ul>
+          </li>
+
+
+          <li class="menu-item-has-children">
+            <a href="#">Otros</a>
+            <ul class="sub-menu">
+            <li><a  href="capturargasto.php?opc=1">Registrar gasto   </a></li>
+            <li><a  href="gastos.php?ver=?opc=3">Ver gastos</a></li>
+            <li><a  href="gastos.php?opc=2">Modificar gasto </a></li>
+         
             </ul>
           </li>
         </ul><!-- .menu -->

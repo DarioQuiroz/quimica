@@ -16,8 +16,9 @@ function con(){
 
 function insert_img($folder, $image){
 	$con = con();
-	$con->query("insert into image (folder,src,created_at,estado) value (\"$folder\",\"$image\",NOW(),0)");
+	$con->query("insert into gastos (id,concepto,cantidad,fecha	) value (\"$folder\",\"$image\",NOW(),0)");
 }
+
 
 
 
@@ -319,4 +320,17 @@ function search_genricoid($search){
     return $images;
 }
 
+
+
+function get_gasto(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * FROM gastos order by id");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
 ?>
+
+

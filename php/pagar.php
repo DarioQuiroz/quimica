@@ -101,14 +101,14 @@ include 'carrito.php';
          }
          
         
-        // header("location:../fpdf/fpdf-basic.php?cliente=$nombre");
+         header("location:../fpdf/fpdf-basic.php?cliente=$nombre");
         
     
          ?>
 
 <script type="text/javascript">
 //alert("¡Datos Actualizados Exitosamante!");
-window.open("../fpdf/fpdf-basic.php?cliente=<?php echo $nombre ?>", "_blank", "toolbar=yes");
+//window.open("../fpdf/fpdf-basic.php?cliente=<?php echo $nombre ?>", "_blank", "toolbar=yes");
 
-	window.location.href='principal.php';
+	//window.location.href='principal.php';
 </script>

@@ -36,7 +36,7 @@ $pdf->AddPage();
 $pdf->SetTitle('Nota de venta');
 $pdf->SetAuthor('Kodetop');
 $pdf->SetCreator('FPDF Maker');
-
+$pdf->SetDrawColor(0,0,225);
 // add title
 $pdf->renderTitle('Generar archivos PDF con PHP');
 

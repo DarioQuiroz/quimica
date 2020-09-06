@@ -19,11 +19,13 @@ $pdf->SetTitle('Nota de venta');
 $pdf->AddPage();
 $nom=$_GET['cliente'];
 //Seteamos el inicio del margen superior en 25 pixeles
+$pdf->SetDrawColor(0,0,225);
 
 $y_axis_initial = 25;
 
 //Seteamos el tiupo de letra y creamos el titulo de la pagina. No es un encabezado no se repetira
 $pdf->SetFont('Arial','B',12);
+$pdf->Image('assets/LOGO.jpg', null, null, 120);
 
 $pdf->Cell(40,6,'',0,0,'C');
 $pdf->Cell(100,6,'Nota de remision',1,0,'C');
