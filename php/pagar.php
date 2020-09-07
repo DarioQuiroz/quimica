@@ -96,10 +96,12 @@ include 'carrito.php';
          }
          if ($_GET['cliente']!="") {
           $nombre=$_GET['cliente'];
+          $dom=$_GET['dom'];
          } else {
           $nombre=$_POST['nombre'];
+          $dom=$_POST['domicilio'];
          }
-         $dom=$_GET['dom'];
+        
          
         
          header("location:../fpdf/fpdf-basic.php?cliente=$nombre&forma=$forma&&dom=$dom");

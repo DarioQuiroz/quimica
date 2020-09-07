@@ -331,6 +331,33 @@ function get_gasto(){
 	}
 	return $images;
 }
+
+
+
+function get_gastosnow(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * FROM gastos WHERE DATE(fecha) = DATE(NOW())");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
+
+
+function get_existecaja(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * 	FROM ventadia	ORDER BY id DESC	LIMIT 1");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
 ?>
+
+
 
 

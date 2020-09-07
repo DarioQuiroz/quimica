@@ -93,7 +93,6 @@ include 'cavecera.php' ?>
         <aside>
           <h3 class="toolbar-title">Subtotal del carrito:</h3>
           <h4 id="totalpay">$ <?php echo number_format($total1, 2) ?> </h4>       
-          <a href="#" class="btn btn-default btn-block waves-effect waves-light">Actualización de la compra</a>
         
 
 <div class="contenedor-modal">
@@ -160,6 +159,9 @@ include 'cavecera.php' ?>
 <FORM action="pagar.php?forma=2" method="POST">
 <label for="provider_rfc">Nombre del Cliente</label>
     <input class="form-control" size="12" maxlength="12" type="text"  name="nombre" id="nombre" required/>
+    <label for="provider_rfc">Domicilio del Cliente</label>
+    <input class="form-control" size="12" maxlength="12" type="text"  name="domicilio" id="domicilio" required/>
+
     <input class="btn-block effect btn btn-primary  light space-top-none" type="submit" name="btnAccion" value="Cobrar">
 
 </FORM>
