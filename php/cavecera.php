@@ -76,7 +76,7 @@
         <ul class="menu">
 
           <li class="menu-item-has-children">
-            <a href="principal.php">Ventas</a>
+            <a href="principal.php">Vender</a>
             
 
           </li>
@@ -103,7 +103,9 @@
             <a href="#">Ventas</a>
             <ul class="sub-menu" id="sub1">
               <li><a href="inventario.php">Inventario</a></li>
-              <li><a href="ventas.php">Resumen de ventas</a></li>
+              <li><a href="ventas.php?opc=1">Resumen de ventas</a></li>
+              <li><a href="ventas.php?opc=2">Resumen de Días</a></li>
+
             </ul>
           </li>
 

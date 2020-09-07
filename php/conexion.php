@@ -356,6 +356,31 @@ function get_existecaja(){
 	return $images;
 }
 
+
+function get_ventadia(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * 	FROM ventadia	ORDER BY fecha DESC");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
+
+function get_ventasdias($search, $search2){
+	$images = array();
+	$con = con();
+
+
+	$query=$con->query('SELECT * FROM `ventadia` WHERE fecha BETWEEN "'.$search.'" AND "'.$search2.'"  ');
+	
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
+
 ?>
 
 

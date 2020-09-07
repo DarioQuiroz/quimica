@@ -84,7 +84,7 @@ include 'carrito.php';
   <div class="form-group">
   <div class="float-right">
   <?php  
-  echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='Eliminar_producto.php?no=". $_GET['id']."''>"?>Borrar Cliente</a> </th>
+  echo "<a class='text-danger' data-confirm='Esta acción no se puede revertir' rel='nofollow' data-method='delete' href='eliminarcliente.php?no=".  $consulta[0]."''>"?>Borrar Cliente</a> </th>
         
       </div>
   <p>    <input type="submit" name="commit" value="Actualizar" class="btn btn-primary" data-disable-with="Actualizar" /></p>

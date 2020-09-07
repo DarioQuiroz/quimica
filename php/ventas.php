@@ -8,21 +8,17 @@ include 'config.php';
 include 'carrito.php';
 
 
+require_once "cavecera.php";
+$opcion=$_GET['opc'];
 
+if ($opcion==1) {
+  
 if (empty($_POST['feinf']) && empty($_POST['fesu']))
-  $files = get_venta();
+$files = get_venta();
+else
 
- else
- 
+$files=get_todo_fecha($_POST['feinf'], $_POST['fesu']);
 
-	
-
- $files=get_todo_fecha($_POST['feinf'], $_POST['fesu']);
-
-
-
-
-  require_once "cavecera.php";
 ?>
 
 
@@ -47,8 +43,8 @@ if (empty($_POST['feinf']) && empty($_POST['fesu']))
      <div class="container"> 
      <form method="post" class="form-signin col-6">
     
-                    <input type="date" name="feinf" class="form-control "min="2017-04-01"  placeholder="Fecha inferior" required>
-                    <input type="date" name="fesu" class="form-control "  max="" placeholder="Fecha superior" required>
+                  <p> Fecha inferior: <input type="date" name="feinf" class="form-control "min="2017-04-01"  placeholder="Fecha inferior" required></p> 
+                    <p>Fecha superior: <input type="date" name="fesu" class="form-control "  max="" placeholder="Fecha superior" required></p>
 
                     <button class="add-to-cart" name="btnAccion" value="todo" type="submit" > <em>Buscar</em></button>
 
@@ -142,6 +138,159 @@ color: black;
    
 
     <div class="col-4" style="margin-bottom: 3%;"></div>
+
+
+
+    <?php 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+else {
+
+  if (empty($_POST['feinf']) && empty($_POST['fesu']))
+  $files = get_ventadia();
+  else$files=get_ventasdias($_POST['feinf'], $_POST['fesu']);
+
+
+  
+?>
+
+
+
+<div class="col-4" style="margin-bottom: 15%;"></div>
+  <section class="container">
+    <div class="col-4 "></div>
+    <h1>Resumen de Días</h1>
+
+  </section>
+
+
+  <section class="container">
+    
+    
+    
+    <div class="col-4" style="margin-bottom: 3%;"></div>
+    <?php
+  
+ 
+    if (count($files) > 0) : ?>
+     <div class="container"> 
+     <form method="post" class="form-signin col-6">
+    
+                  <p> Fecha inferior: <input type="date" name="feinf" class="form-control "min="2017-04-01"  placeholder="Fecha inferior" required></p> 
+                    <p>Fecha superior: <input type="date" name="fesu" class="form-control "  max="" placeholder="Fecha superior" required></p>
+
+                    <button class="add-to-cart" name="btnAccion" value="todo" type="submit" > <em>Buscar</em></button>
+
+                  </form>
+                  </div>
+   
+                  <div class="col-4" style="margin-bottom: 3%;"></div>
+
+      <div class="container">
+        <div class="table-responsive">               
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th scope="col-4">
+                
+                <h2>id</h2>
+                  </th>
+                <th scope="col">
+                <h2>Total del Día</h2>
+                </th>
+            
+                <th scope="col">
+                <h2>Total de Crédito</h2>
+                </th>
+                <th scope="col" style="display: table-cell; vertical-align: middle;">
+                <h2>Total de contado</h2>
+                </th>
+                <th scope="col" style="display: table-cell; vertical-align: middle;">
+                <h2>Total Menos los Gastos</h2>
+             
+               
+                </th>
+                <th scope="col" style="display: table-cell; vertical-align: middle;">
+                <h2>Quedo en Caja</h2>
+                </th>
+
+                <th scope="col" style="display: table-cell; vertical-align: middle;">
+                <h2>Fecha</h2>
+                </th>
+               
+               
+            
+              </tr>
+            </thead>
+            <?php
+            $total=0;
+             foreach ($files as $f) : ?>
+              <tr>
+
+                 <td><?php echo $f->id ?></td>           
+             
+                <td> $ <?php echo $f->totaldia; ?></td>
+                <td> $  <?php echo $f->totalcredito; ?></td>
+             
+                <td><?php echo $f->totalcontado; ?></td>
+                <td> $  <?php echo $f->totalmenos; ?></td>
+             
+                <td> $  <?php echo $f->caja; ?></td>
+             
+                <td> $  <?php echo $f->fecha; ?></td>
+           
+
+              
+              </tr>
+              <?php
+              $total=$total+$f->total;
+               endforeach; ?>
+                </tr>
+        
+          </table>
+        </div>
+      </div>
+      <?php else : ?>
+    <h4>No se encontraron resultados con esta busquedad</h4>
+    <?php endif; ?>
+  </section>
+
+   
+
+    <div class="col-4" style="margin-bottom: 3%;"></div>
+
+
+
+    <?php 
+}
+
+
+
+?>
+
 
     <?php require_once "footer.php"; ?>
 
