@@ -33,15 +33,22 @@ if (empty($_POST['name3']))
   require_once "cavecera.php";
 ?>
 
-
-
-<?php //require_once "cavecera.php"; ?>
-<div class="col-4" style="margin-bottom: 15%;"></div>
-  <section class="container">
-    <div class="col-4 "></div>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
     <h1>Detalle de la venta con el id <?php echo $_GET['no']; ?></h1>
+        </div>
+    <div class="col-4">
+      
+    </div>
+    <div class="col-4" style="text-align: center;">
+    
+    <a href="../fpdf/fpdf-advanced.php?re=<?php echo $_GET['no']; ?>" class="btn btn-success" style="text-align: center;"> Reimprimir</a>
 
-  </section>
+    </div>
+  </div>
+</div>
+
 
 
   <section class="container">
@@ -96,12 +103,12 @@ if (empty($_POST['name3']))
                 <td><?php echo $f->id; ?></td>
                 <td><?php echo $f->idventa; ?></td>
 
-                <td>$ <?php echo $f->idproducto; ?></td>
-                <td>   <?php echo $f->preciounitario; ?></td>
+                <td> <?php echo $f->idproducto; ?></td>
+                <td>  $ <?php echo $f->preciounitario; ?></td>
              
                 <td><?php echo $f->cantidad; ?></td>
                 <td><?php echo $f->vendido; ?></td>
-                <td><?php echo $f->total; ?></td>
+                <td>$<?php echo $f->total; ?></td>
               </tr>
 
               <?php 

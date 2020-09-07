@@ -57,18 +57,19 @@ include 'carrito.php';
       
       
       
-          $sentencia="SELECT MAX(id) AS id FROM tblventas";
+          $sentencia="SELECT * FROM tblventas   ORDER BY id DESC   LIMIT    0, 1";
           $resultado= $conn->query($sentencia) or die ("Error al consultar producto".mysqli_error($conn)); 
          $fila=$resultado->fetch_assoc();
       
          return [
             $fila['id'],
+            $fila['fecha']
         
              ];
         }
 
         $idconsulta=$consulta[0];
-       
+       $fechadenota=$consulta[1];
 
         foreach ($_SESSION['carrito'] as $indice => $producto) {
 
@@ -104,7 +105,7 @@ include 'carrito.php';
         
          
         
-         header("location:../fpdf/fpdf-basic.php?cliente=$nombre&forma=$forma&&dom=$dom");
+         header("location:../fpdf/fpdf-basic.php?cliente=$nombre&forma=$forma&&dom=$dom&&folio=$idconsulta&&fec=$fechadenota");
         
     
          ?>

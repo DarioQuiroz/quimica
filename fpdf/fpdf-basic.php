@@ -19,6 +19,8 @@ $pdf->SetTitle('Nota de venta');
 $pdf->AddPage();
 $nom=$_GET['cliente'];
 $dom=$_GET['dom'];
+$foliodeventa= $_GET['folio'];
+$fechadenota= $_GET['fec'];
 //Seteamos el inicio del margen superior en 25 pixeles
 $pdf->SetDrawColor(0,128,0);
 
@@ -29,16 +31,50 @@ $pdf->SetFont('Arial','B',12);
 //$pdf->Image('assets/LOGO.jpg', null, null, 120);
 
 
-$pdf->Cell(40,6,$pdf->Image('assets/LOGO.jpg', null, null, 70),0,0,'C');
-$pdf->Cell(30,6,'NOTA No.',1,0,'C'); 
-$pdf->Ln(6);
-$pdf->Cell(60,6,'Nota de remision',1,0,'C');
-$pdf->Cell(30,6,'',0,0,'C');
-$pdf->Ln(15);
+$pdf->Cell(40,6,'',0,0,'C'); 
 
-$pdf->Ln(15);
-$pdf->Cell(40,6,'',0,0,'C');
-$pdf->Cell(100,6,'LISTA DE PRODUCTOS',1,0,'C');
+$pdf->Cell(140,6,$pdf->Image('assets/LOGO.jpg', null, null, 90),0,0,'L');
+$pdf->Ln(6);
+$pdf->SetFillColor(0,143,57);
+$pdf->SetTextColor(255,255,255);
+
+$pdf->Cell(30,6,'NOTA No.',1,0,'C',true); 
+$pdf->Cell(40,6,'',0,0,'C'); 
+$pdf->SetTextColor(1,1,1);
+$pdf->Cell(40,6,'R.F.C AAR171129NC2',0,0,'C',); 
+$pdf->Ln(6);
+
+$pdf->Cell(30,6,$foliodeventa,1,0,'C'); 
+$pdf->Cell(40,6,'',0,0,'C'); 
+
+$pdf->Cell(40,6,'MANUEL CASTAÑEDA 879 COL. ROSALES',0,0,'C',); 
+$pdf->Ln(8);
+
+
+$pdf->SetFont('Arial','B',10);
+
+$pdf->SetFillColor(0,143,57);
+$pdf->SetTextColor(255,255,255);
+
+$pdf->Cell(40,6,'Fecha de la nota',1,0,'C', true);
+$pdf->SetTextColor(1,1,1);
+$pdf->Cell(30,6,'',0,0,'C'); 
+
+$pdf->Cell(40,6,'C.P. 61830 ARIO DE ROSALES',0,0,'C',); 
+$pdf->Ln(6);
+
+$pdf->SetTextColor(1,1,1);
+$pdf->Cell(40,6,$fechadenota,1,0,'C');
+$pdf->Cell(30,6,'',0,0,'C');
+$pdf->Cell(40,6,'4251339453',0,0,'C',); 
+
+
+$pdf->SetFont('Arial','B',10);
+
+$pdf->SetFillColor(0,143,57);
+$pdf->SetTextColor(255,255,255);
+
+
 $pdf->Ln(10);
 $pdf->SetFillColor(255,255,255);
 $pdf->SetTextColor(0,143,57);
@@ -95,15 +131,15 @@ foreach ($_SESSION['carrito'] as $indice => $producto) {
     $cantidad = $producto['CANTIDAD'];
     $precio = $producto['PRECIO'];
     $pdf->SetTextColor(1,1,1);
-    $pdf->Cell(30, 15, $cantidad, 1, 0, 'L', 0);
+    $pdf->Cell(30, 8, $cantidad, 1, 0, 'L', 0);
 
-    $pdf->Cell(50, 15, $titulo, 1, 0, 'L', 0);
+    $pdf->Cell(50, 8, $titulo, 1, 0, 'L', 0);
 
-    $pdf->Cell(40, 15,"$ $precio" , 1, 0, 'R', 0);
+    $pdf->Cell(40, 8,"$ $precio" , 1, 0, 'R', 0);
     $loquees=$cantidad*$precio;
     $loquefue=$loquefue+$loquees;
-    $pdf->Cell(40, 15, "$ $loquees", 1, 0, 'R', 0);
-    $pdf->Ln(15);
+    $pdf->Cell(40, 8, "$ $loquees", 1, 0, 'R', 0);
+    $pdf->Ln(8);
 }
 $pdf->Cell(40, 15,"" , 0, 0, 'R', 0);
 $pdf->SetTextColor(0,143,57);
