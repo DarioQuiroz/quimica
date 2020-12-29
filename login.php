@@ -2,25 +2,65 @@
 
 include("conexion.php");
 
-$nombre = $_POST["email"];
+if(isset($_POST['btnAccion'])){
+
+    switch ($_POST['btnAccion']) {
+		
+		case 'Ingresar':
+			
+
+
+$email = $_POST["email"];
 $pass = $_POST["pass"];
 $tipo=0;
-$query = mysqli_query($conn,"SELECT * FROM usuarios WHERE usuario = '".$nombre."' and password = '".$pass."'");
+$query = mysqli_query($conn,"SELECT * FROM usuarios WHERE usuario = '".$email."' and password = '".$pass."'");
 $nr = mysqli_num_rows($query);
 
 
 
 while($mostrar=mysqli_fetch_array($query)){
+	echo $nombre=$mostrar['nombre'];
+	$nombre=$mostrar['nombre'];
+	$apellido=$mostrar['apellido'];
 	$tipo=$mostrar['tipo'];
+	
+	
 
 	if( $tipo==1){
-	  header("location:quimica1/php/principal.php?us=$tipo");
+
+	
+			$sqlgrabar = "INSERT INTO usuarios (id, nombre, apellido, usuario, password, tipo) values
+			 (NULL, '$nombre','$apellido','$email','$pass','$tipo')";
+		
+		if(mysqli_query($conn, $sqlgrabar))
+		{
+			echo "<script> alert('Usuario registrado: $email'); </script>";
+		}else 
+		{
+			echo "Error: " .$sqlgrabar."<br>".mysql_error($conn);
+		}
+				
+				
+		 header("location:quimica1/php/principal.php");
+	  
+
 	}
 
 
 	else if( $tipo==2)
 	{
-	  header("location:quimica1/vendedor/php/principal.php?us=$tipo");
+		$sqlgrabar = "INSERT INTO usuarios (id, nombre, apellido, usuario, password, tipo) values
+		(NULL, '$nombre','$apellido','$email','$pass','$tipo')";
+   
+   if(mysqli_query($conn, $sqlgrabar))
+   {
+	   echo "<script> alert('Usuario registrado: $email'); </script>";
+   }else 
+   {
+	   echo "Error: " .$sqlgrabar."<br>".mysql_error($conn);
+   }
+	   
+	  header("location:quimica1/vendedor/php/principal.php");
 	}
 	else
 	{
@@ -37,6 +77,12 @@ while($mostrar=mysqli_fetch_array($query)){
   
   }
   
+        break;
+    }
+
+	}
+
+
 
 /*
 
