@@ -62,7 +62,7 @@ function get_detalleventa($search){
 function get_detallecompras($search){
 	$images = array();
 	$con = con();
-	$query=$con->query('select * from comprasproducto where foliocompra like "%'.$search.'%"');
+	$query=$con->query("select * from comprasproducto where foliocompra=$search");
 	while($r=$query->fetch_object()){
 		$images[] = $r;
 	}
@@ -381,6 +381,42 @@ function get_ventasdias($search, $search2){
 	return $images;
 }
 
+
+
+function search_getprov($search){
+    $images = array();
+    $con = con();
+	$query=$con->query('SELECT * FROM proveedores WHERE rfc LIKE "%'.$search.'%" OR razonsocial LIKE "%'.$search.'%" ');
+    while($r=$query->fetch_object()){
+        $images[] = $r;
+    }
+    return $images;
+}
+
+
+
+
+function search_usuarios($search){
+    $images = array();
+    $con = con();
+	$query=$con->query('SELECT * FROM usuarios WHERE nombre LIKE "%'.$search.'%" ');
+    while($r=$query->fetch_object()){
+        $images[] = $r;
+    }
+    return $images;
+}
+
+
+
+function get_usuarios(){
+	$images = array();
+	$con = con();
+	$query=$con->query("SELECT * FROM usuarios order by id");
+	while($r=$query->fetch_object()){
+		$images[] = $r;
+	}
+	return $images;
+}
 ?>
 
 

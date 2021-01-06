@@ -117,7 +117,7 @@ if (empty($_POST['name3']))
                 <td><?php echo $f->linea; ?></td>
                 <td><?php echo $f->nombre; ?></td>
 
-                <td>$ <?php echo $f->valor_unitario; ?></td>
+                <td>$ <?php echo $f->valor_unitario_venta; ?></td>
                 <td>   <?php echo $f->cantidad; ?></td>
              
                 <td><?php echo $f->in_act; ?></td>
@@ -125,10 +125,10 @@ if (empty($_POST['name3']))
                
 
                 <td> <form action="" method="POST">
-                <input type="number" name="Cantidad" id="Cantidad" min="1" max="<?php echo $f->cantidad; ?>" value="" required>
+                <input type="number" step="0.01" name="Cantidad" id="Cantidad" min="1" max="<?php echo $f->cantidad; ?>" value="" required>
                     <input type="hidden" name="id" id="id" value="<?php echo  openssl_encrypt($f->clave,code,key); ?>">
                     <input type="hidden" name="modelo" id="modelo" value="<?php echo openssl_encrypt( $f->nombre,code,key); ?>">
-                    <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt( $f->valor_unitario,code,key); ?>">
+                    <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt( $f->valor_unitario_venta,code,key); ?>">
                     <td>  <button class="add-to-cart" name="btnAccion" value="agregar" type="submit" > <em>Agregar</em></button></td>
                   </form>
                   </td>

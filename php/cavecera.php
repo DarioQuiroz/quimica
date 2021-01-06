@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>titulo</title>
+  <title>Agroseader</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!--SEO Meta Tags-->
@@ -61,7 +61,7 @@
 
       <!-- Site Logo -->
       <a href="principal.php" class="site-logo visible-desktop">
-        <img id="logo" src="img/office class logo.jpg" style="width:100%;     margin-left: 25%;" alt="logo">
+   <img id="logo" src="../img/image.png" style="width:150%;     margin-left: 5%;" alt="logo">
       </a><!-- site-logo.visible-desktop -->
       <!-- site-logo.visible-mobile -->
 
@@ -71,7 +71,9 @@
       <!-- Main Navigation -->
       <!-- Control the position of navigation via modifier classes: "text-left, text-center, text-right" -->
       <nav class="main-navigation text-center">
-
+      <?php
+        
+            ?>
 
         <ul class="menu">
 
@@ -86,7 +88,7 @@
 
             <li class="menu-item-has-children"><a >Registrar nuevo producto </a>
             <ul class="sub-menu">
-            <li><a href="proveedores.php?ver=1">Agregar producto a credito</a></li>
+            <li><a href="proveedores.php?ver=1&&opc=1">Agregar producto a credito</a></li>
           <li><a   href="proveedores.php?ver=1&&opc=2">Agregar producto de contado </a></li>
 
             </li>
@@ -138,13 +140,35 @@
 
           <li class="menu-item-has-children">
             <a href="#">Otros</a>
+
+
             <ul class="sub-menu">
             <li><a  href="capturargasto.php">Registrar gasto   </a></li>
             <li><a  href="gastos.php?ver=3">Ver gastos</a></li>
             <li><a  href="gastos.php?ver=2">Modificar gasto </a></li>
-         
+            <li><a  href="../../index.php">Cerrar sesion   </a></li>
+
+
+            <li class="menu-item-has-children"><a >Usuarios </a>
+            <ul class="sub-menu">
+            <li><a href="reus.php?ver=1&&opc=1">Agregar </a></li>
+          <li><a   href="editar_usuarios.php?ver=1&&opc=2">Modificar </a></li>
+
+            </li>
+            
+            </ul>
+        
+
+
+
+
             </ul>
           </li>
+
+
+
+
+        
         </ul><!-- .menu -->
       </nav><!-- .main-navigation -->
 
@@ -154,7 +178,7 @@
           <a href="#" class="mobile-menu-toggle"><i class="material-icons menu"></i></a>
           <!--   <a href="account.html"><i class="material-icons person"></i></a>-->
           <div class="cart-btn">
-            <a href="carritodecompras.php">
+            <a href="carritodecompras.php?">
               <i>
                 <span class="material-icons shopping_basket"></span>
                 <span class="count"><?php error_reporting(0);
